@@ -1,0 +1,1542 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="x-dns-prefetch-control" content="off">
+<meta name="description" content="Значения параметров noscript.* в about:config">
+<meta name="keywords" content="NoScript, noscript.surrogate, ABE, about:config">
+<meta name="robots" content="nofollow, noodp, noarchive, nocache">
+<meta name="yandex" content="none, noyaca">
+<meta name="referrer" content="no-referrer">
+<title>About:NoScript</title>
+<style type="text/css">
+BODY{background: #e3e0da; color: #424242; font-family: Consolas,"DejaVu Sans Mono",monospace;}
+H1, H2{text-align: center; font-family: Verdana,"DejaVu Sans",sans-serif}
+H1 {color: #00397e; font-size: 146%; margin-bottom: -1%;}
+H2 {color: #ff0000; font-size: 105%;}
+p{margin-top: 4%;}
+::-moz-selection{color: #fff; background-color: #4b6983;}
+::selection{color: #fff; background-color: #4b6983;}
+a{color: #3778ae;}
+a:hover{color: #ff6914;}
+.bg {display: -moz-box; display: -webkit-flex; display: -ms-flexbox; display: flex;}
+.content {display: inline-block; margin: auto;}
+.uline {text-decoration: underline;}
+.italic{font-style: italic;}
+.bold {font-weight: bold;}
+.prim {font-size: 70%;}
+.note{font-style: italic; padding-top: 2%; padding-bottom: 4%; padding-left: 15%;}
+.footerbg{margin-top: 5%;  padding: 1.7% 2%; background: #d9d4c9; line-height: 24px;}
+#fdleft {padding-top: 3%}
+#fdright{float:right; padding-top: 3%}
+</style>
+</head>
+<body>
+<div class="bg">
+  <div class="content">
+<h1>NoScript</h1>
+<h2>about:config</h2>
+<!--noindex-->
+    <div class="note">
+Скриншоты всех вкладок Настроек — <a href="https://noscript.net/screenshots">https://noscript.net/screenshots</a><br>
+<br>
+ЛКМ = Leftclick, СКМ = Middleclick, ПКМ = Rightclick<br>
+<br>
+(1.2.3) = <a href="https://noscript.net/changelog">https://noscript.net/changelog#1.2.3</a><br>
+<br>
+Некоторые ссылки, например: maone.net/<span class="uline">viewtopic</span>, flashgot.net/<span class="uline">viewtopic</span><br>
+побились с течением времени, и приведены только во имя справедливости.<br>
+<br>
+NS не добавляет свой параметр в about:config для<br>
+Дополнительно -> Доверенные -> «Разрешить использование &lt;A PING…&gt;»,<br>
+просто переключается browser.send_pings.
+
+    </div>
+
+<p>
+<span class="bold">capability.policy.maonoscript.sites</span><br>
+Весь белый список (пользовательский, default, mandatory).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forum.mozilla-russia.org/viewtopic.php?pid=369168#p369168">https://forum.mozilla-russia.org/viewtopic&hellip;#p369168</a>&nbsp;Infocatcher<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=22187">https://forums.informaction.com/viewtopic.php?f=7&amp;t=22187</a>
+</p>
+<p>
+<span class="bold">extensions.{73a6fe31-595d-460b-a920-fcc0f8843232}.update.enabled</span><br>
+false — отключить автообновление.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#a2_6">https://noscript.net/faq#a2_6</a>
+</p>
+<p>
+<span class="bold">noscript.ABE.allowRulesetRedir</span><br>
+Разрешить ли http перенаправления при загрузке набора собственных правил сайта (rules.abe).<br>
+(&quot;whether to allow HTTP redirections when fetching a site's ABE ruleset<br>
+(related to &quot;Allow sites to push their own rulesets&quot;)&quot;&nbsp;barbaz)
+</p>
+<p>
+<span class="bold">noscript.ABE.disabledRulesetNames</span><br>
+Отключённые наборы правил ABE.<br>
+Настройки -&gt; Дополнительно -&gt; ABE -&gt; SYSTEM (например) -&gt; Использовать/Отключить<br>
+(Options -&gt; Advanced -&gt; ABE -&gt; %RULESETNAME% -&gt; Enable/Disable)
+</p>
+<p>
+<span class="bold">noscript.ABE.legacyPrompt</span><br>
+Используется для совместимости со старыми версиями Fx/SM, в которых не было notification bar.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=61747#p61747">https://forums.informaction.com/viewtopic&hellip;#p61747</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.ABE.localExtras (2.0.1)</span><br>
+Следует рассматривать как дополнение к правилам LOCAL, а также к автоопределению WAN IP.<br>
+Вместо добавления адресов к этому параметру можно дописывать их к &quot;Accept from LOCAL&quot;<br>
+ в наборе правил SYSTEM  в Настройках.<br>
+&nbsp;&nbsp;&nbsp;maone.net/viewtopic.php?p=29485#p29485<br>
+Можно добавить свой IP и добиться того же эффекта, что и при поставленной галочке <br>
+WAN IP, но IP в Настройках отображаться не будет.<br>
+&nbsp;&nbsp;&nbsp;maone.net/viewtopic.php?p=58343#p58343<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=58343#p58343">https://forums.informaction.com/viewtopic&hellip;#p58343</a>
+</p>
+<p>
+<span class="bold">noscript.ABE.notify.namedLoopback (1.9.5.5)</span><br>
+Набор правил SYSTEM перехватывает запросы к 127.0.0.1 для защиты от CSRF и XSS;<br>
+и если в hosts есть строки: <span class="italic">&lt; 127.0.0.1 bad.site.com &gt;</span>, то будут появляться уведомления ABE.<br>
+ false — не показывать такие уведомления (всё-равно будут регистрироваться в консоли ошибок).<br>
+ А для блокировки доменов в hosts лучше использовать 255.255.255.0<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa8_1">https://noscript.net/faq#qa8_1</a>
+</p>
+<p>
+<span class="bold">noscript.ABE.rulesets.*</span><br>
+Наборы пользовательских правил. Создать строковый параметр с любым именем.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=71579#p71579">https://forums.informaction.com/viewtopic.php?p=71579#p71579</a>&nbsp;barbaz<br>
+Примеры правил:<br>
+<a href="https://noscript.net/faq#qa8_3">https://noscript.net/faq#qa8...</a><br>
+<a href="https://forums.informaction.com/viewtopic.php?f=23&amp;t=8734">Some Sites you Might Want to Protect</a><br>
+<a href="http://pastebin.com/jjNQTYPD">Ad blocking, Annoyances, Social media</a>&nbsp;access2godzilla<br>
+<a href="https://gist.github.com/jiang3/7886320#file-autoconfig-js-LC413">Advertising/tracking sites</a>&nbsp;jiang3<br>
+<a href="https://docs.google.com/document/d/1DXEQaLtzt06bMsyqln56lVQgU-P6PWei3p4jxGg6Kis/pub">Ad</a>, 
+<a href="https://docs.google.com/document/d/1C4esWIjf5jM4vk54Q4tLQQ_b3tT9wdpL2Iuqs6xSTaM/pub#t.352d611c29ea452c9ed72c6fcd077e450c48e406">advertising/tracking cookies</a>&nbsp;江3如此多娇 (Цзян3 красотою л&#1123;па)<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=78597#p78597"> .exe .bat .dll &hellip; (If you don't even want able to download)</a><br>
+<a href="https://forums.informaction.com/viewtopic.php?p=58262#p58262">security.mixed_content.block_active_content</a>&nbsp;barbaz
+</p>
+<p>
+<span class="bold">noscript.ABE.siteEnabled</span><br>
+Настройки -&gt; Дополнительно -&gt; ABE «Разрешать сайтам устанавливать свои наборы правил»<br>
+(Options -&gt; Advanced -&gt; ABE &quot;Allow sites to push their own rulesets&quot;)<br>
+Правила сайта (rules.abe) применяются исключительно на самом сайте. И даже злоумышленно<br>
+изменённый файл rules.abe не может быть применён к другим сайтам.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=5969#p5969">https://forums.informaction.com/viewtopic.php?p=5969#p5969</a>&nbsp;Giorgio&nbsp;Maone<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/abe/web-authors.html">https://noscript.net/abe/web-authors.html</a>
+</p>
+<p>
+<span class="bold">noscript.ABE.skipBrowserRequests (1.9.7.2)</span><br>
+Пропускать (не блокировать) внутренние запросы браузера.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=66845#p66845">https://forums.informaction.com/viewtopic&hellip;#p66845</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.ABE.wanIpAsLocal (2.0rc5)</span><br>
+Настройки -&gt; Дополнительно -&gt; ABE &quot;WAN IP ...&quot;<br>
+(Options -&gt; Advanced -&gt; ABE &quot;WAN IP ...&quot;)<br>
+Защита маршрутизаторов и Интранет веб-ресурсов от CSRF, DNS rebinding.<br>
+<a href="https://addons.mozilla.org/ru/firefox/addon/noscript/privacy/">addons.mozilla.org/&hellip;noscript/privacy/</a><br>
+<a href="https://hackademix.net/2010/07/28/abe-patrols-the-routes-to-your-routers/">hackademix.net/abe-patrols-the-routes-to-your-routers/</a>
+</p>
+<p>
+<span class="bold">noscript.ABE.wanIpCheckURL</span><br>
+Адрес, с которого будет запрашиваться WAN IP. Если эта функция нужна, можно подставить адрес<br>
+своего сервера вместо https://secure.informaction.com/ipecho/.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2010/07/28/abe-patrols-the-routes-to-your-routers/#comment-23239">https://hackademix.net/2010/07/28/&hellip;#comment-23239</a>
+</p>
+<p>
+<span class="bold">noscript.ajaxFallback.enabled (2.0.9.9rc1)</span><br>
+«Этот параметр просто помогает навигации на некоторых сайтах, которые строго требуют JavaScript.<br>
+Даже без включения JavaScript, пустые страницы заменяются их содержимым, предназначенным для<br>
+поисковой индексации. Это безобидно (если вы заботитесь о безопасности).»<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=16346#p57384">https://forums.informaction.com/viewtopic&hellip;#p57384</a>&nbsp;Giorgio&nbsp;Maone<br>
+«Некоторые сайты на основе AJAX используют специальный синтаксис строки запроса, чтобы показать<br>
+поисковым роботам, что есть способ получить снимок HTML: как будет выглядеть страница после<br>
+выполнения AJAX. NoScript может действовать как сканер и использовать это, чтобы собрать всю<br>
+страницу без включения JavaScript.»<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=57386f#p57386">https://forums.informaction.com/viewtopic&hellip;#p57386</a>&nbsp;Thrawn
+</p>
+<p>
+<span class="bold">noscript.allowBookmarkletImports</span><br>
+Выполнение внешних скриптов, загрузка которых инициируется букмарклетом или snippet’ом<br>
+JavaScript-кода в адресной строке, даже если их источник не внесён в белый список.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=22909#p22909">https://forums.informaction.com/viewtopic&hellip;#p22909</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.allowBookmarks (1.1.4)</span><br>
+«На лету» разрешать выполнение JS документам верхнего уровня сайтов, открываемых через закладки.<br>
+Чтобы example.com попал в белый список, недостаточно добавить его в закладки.<br>
+Надо открыть его, используя именно «Закладки», а не адресную строку и не ссылку на странице.<br>
+Настройки -&gt; Основные -&gt; «Разрешать сайты, открываемые через закладки»<br>
+(Options -&gt; General -&gt; &quot;Allow sites opened through bookmarks&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#toplevel">https://noscript.net/features#toplevel</a>
+</p>
+<p>
+<span class="bold">noscript.allowCachingObjects (2.1.1.2rc5)</span><br>
+Не блокировать объекты, используемые для упреждающей выборки JavaScript и CSS контента,<br>
+при условии нахождении родителя в белом списке.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=6677">https://forums.informaction.com/viewtopic.php?f=7&amp;t=6677</a>
+</p>
+<p>
+<span class="bold">noscript.allowClipboard (1.1.0)</span><br>
+Настройки -&gt; Дополнительно -&gt; Доверенные<br>
+«Расширенные копирование и вставка из внешнего буфера обмена»<br>
+(Options -&gt; Advanced -&gt; Trusted &quot;Allow rich text copy and paste from external clipboard&quot;)<br>
+Нужно, в основном, для работы кнопок «Копировать», «Вырезать», «Вставить» WYSYWYG редакторов.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=11901#p11901">https://forums.informaction.com/viewtopic&hellip;#p11901</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#extraopts">https://noscript.net/features#extraopts</a> -&gt; Trusted<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa3_8">https://noscript.net/faq#qa3_8</a><br>
+В версии 2.6.8.20 удалено из UI браузеров, не поддерживающих <a href="http://www-archive.mozilla.org/projects/security/components/ConfigPolicy.html">CAPS</a> (Gecko 28 и выше).
+</p>
+<p>
+<span class="bold">noscript.allowHttpsOnly (1.8.0.7)</span><br>
+Настройки -&gt; Дополнительно -&gt; HTTPS -&gt; Разрешения<br>
+«Запрещать активное веб-содержимое, за исключением защищённых (HTTPS) соединений:»<br>
+0 — «Никогда»<br>
+1 — «При использовании прокси»<br>
+2 — «Всегда»<br>
+(Options -&gt; Advanced -&gt; HTTPS -&gt; Permissions &quot;Forbid active web-content ‹…› connection:&quot;)<br>
+0 — &quot;Newer&quot;<br>
+1 — &quot;When using a proxy&quot;<br>
+2 — &quot;Always&quot;<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa6_2">https://noscript.net/faq#qa6_2</a>
+</p>
+<p>
+<span class="bold">noscript.allowLocalLinks (1.1.4.5.070127)</span><br>
+Настройки -&gt; Дополнительно -&gt; Доверенные «Разрешить локальные ссылки»<br>
+(Options -&gt; Advanced -&gt; Trusted &quot;Allow local links&quot;)<br>
+Позволяет подключить локальные файлы, например изображения, как того требуют некоторые<br>
+игровые сайты (в основном ММО игры) для повышения производительности.<br>
+Необходимо также разрешить file://<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#toplevel">https://noscript.net/features#toplevel</a>  -&gt;  Trusted<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=11901#p11901">https://forums.informaction.com/viewtopic&hellip;#p11901</a>&nbsp;Giorgio&nbsp;Maone<br>
+— Можно ли внести в белый список только некоторые локальные файлы?<br>
+— Нет.<br>
+&nbsp;&nbsp;&nbsp;flashgot.net/viewtopic.php?p=12182#p12182&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.allowPageLevel (1.7.5.4)</span><br>
+«Временно разрешить все скрипты на этой странице»<br>
+(&quot;Temporarily allow all this page&quot;)<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=8309">Why must I &quot;Temporarily allow all this page&quot; REPEATEDLY?</a>&nbsp;Tom&nbsp;T.<br>
+0 — не указано<br>
+1 — полный адрес<br>
+2 — полный домен<br>
+3 — домен второго уровня
+</p>
+<p>
+<span class="bold">noscript.allowURLBarImports (2.1.0.4rc9)</span><br>
+выполнение сценариев не из белого списка, импортированных во время выполнения<br>
+javascript: и data: URL, введенных или вставленных в адресную строку.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=10&amp;t=6487">https://forums.informaction.com/viewtopic.php?f=10&amp;t=6487</a>
+</p>
+<p>
+<span class="bold">noscript.allowURLBarJS (1.4.9.7)</span><br>
+Выполнение скриптов в адресной строке, даже если текущая страница не в белом списке<br>
+(то, что NoScript должен эмулировать, иначе это было бы невозможно).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=22909#p22909">https://forums.informaction.com/viewtopic&hellip;#p22909</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.allowWhitelistUpdates (2.6.9.7)</span><br>
+Обновление белого списка при выходе новой версии NoScript,<br>
+если он уже был изменён (пользователем, например).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=73373">https://forums.informaction.com/viewtopic.php?p=73373</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=20375">https://forums.informaction.com/viewtopic.php?f=7&amp;t=20375</a>
+</p>
+<p>
+<span class="bold">noscript.allowedMimeRegExp (1.3.2)</span><br>
+Можно настроить некоторые исключения для запрещённого встроенного содержимого<br>
+(например плагинов и фреймов), автоматически разрешая на всех сайтах определённые типы.<br>
+Можно ограничить разрешение путем сопоставления типа содержимого с адресом сайта. <br>
+Например, &quot;application/x-shockwave-flash@https?://[^/]+\.(?:youtube|ytimg)\.com&quot;.<br>
+Типы содержимого разделять пробелом.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#pluginexceptions">https://noscript.net/features#pluginexceptions</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=72566#p72566">https://forums.informaction.com/viewtopic&hellip;#p72566</a>&nbsp;Giorgio&nbsp;Maone<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forum.mozilla-russia.org/viewtopic.php?pid=683718#p683718">https://forum.mozilla-russia.org/viewtopic&hellip;#p683718</a>&nbsp;turbot&nbsp;(для file://)
+</p>
+<p>
+<span class="bold">noscript.alwaysBlockUntrustedContent (1.3.2)</span><br>
+Настройки -> Встроенные объекты «Блокировать любой объект с сайтов, отмеченных как недоверенные»<br>
+(Options -> Embeddings "Block every object coming from a site marked as untrusted")<br>
+Запрещается plugin-контент с сайтов, явно отмеченных как недоверенные (см. noscript.untrusted).
+</p>
+<p>
+<span class="bold">noscript.alwaysShowObjectSources (1.9.9.60)</span><br>
+Отображать источники объектов в меню разрешений<br>
+(помимо строки «Заблокированные объекты» (&quot;Blocked Objects&quot;)).
+</p>
+<p>
+<span class="bold">noscript.autoAllow (1.1.4.5.070127)</span><br>
+«На лету» временно разрешать скрипты документов верхнего уровня, за исключением отмеченных<br>
+как недоверенные. Документы верхнего уровня выделены жирным шрифтом в меню разрешений.<br>
+Настройки -&gt; Основные «Временно разрешать документы верхнего уровня по умолчанию»<br>
+1 — «Полные адреса (http://www.noscript.net)»<br>
+2 — «Полные домены (www.noscript.net)»<br>
+3 — «Базовые домены 2-го уровня (noscript.net)»<br>
+(Options -&gt; General &quot;Temporarily allow top-level sites by default&quot;)<br>
+1 — &quot;Full Adresses (http://www.noscript.net)&quot;<br>
+2 — &quot;Full Domains (www.noscript.net)&quot;<br>
+3 — &quot;Base 2nd level Domains (noscript.net)&quot;<br>
+0 — не разрешать<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#toplevel">https://noscript.net/features#toplevel</a>
+</p>
+<p>
+<span class="bold">noscript.autoReload</span><br>
+Включает/отключает автоперезагрузку при любом действии.<br>
+Настройки -&gt; Основные «Автоматически обновлять зависимые страницы при измененнии разрешений»<br>
+(Options -&gt; General &quot;Automaticaly reload affected pages when permissions change&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa5_2">https://noscript.net/faq#qa5_2</a>
+</p>
+<p>
+<span class="bold">noscript.autoReload.allTabs (1.1.4.8.070606, 2.2.3)</span><br>
+false — при изменении разрешений перезагружается только активная вкладка.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa5_2">https://noscript.net/faq#qa5_2</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#hiddenprefs">https://noscript.net/features#hiddenprefs</a>
+</p>
+<p>
+<span class="bold">noscript.autoReload.allTabsOnGlobal</span><br>
+false — перезагружается только активная вкладка при глобальном разрешениии скриптов в Настройках.<br>
+(Белый список «Глобальное разрешение скриптов (опасно)»<br>
+(Whitelist &quot;Scripts Globally Allowed (dangerous)&quot;)).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa5_2">https://noscript.net/faq#qa5_2</a><br>
+</p>
+<p>
+<span class="bold">noscript.autoReload.allTabsOnPageAction (1.7.5.3)</span><br>
+false — перезагружается только активная вкладка при использовании команд массовой смены <br>
+разрешений (например: «Разрешить все скрипты на этой странице» (&quot;Allow all this page&quot;)).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa5_2">https://noscript.net/faq#qa5_2</a>
+</p>
+<p>
+<span class="bold">noscript.autoReload.embedders (1.9.9.98rc1)</span><br>
+Автоперезагрузка встроенного содержимого страниц при изменении разрешений.<br>
+0 — не перезагружать.<br>
+1 — наследовать значения &quot;noscript.autoReload&quot;.<br>
+2 — обязательно перезагружать.
+</p>
+<p>
+<span class="bold">noscript.autoReload.global (1.1.4.8.070606)</span><br>
+Включает/отключает автоперезагрузку при глобальном разрешении скриптов в<br>
+Настройки -&gt; Белый список «Глобальное разрешение скриптов (опасно)»<br>
+(Options -&gt; Whitelist &quot;Scripts Globally Allowed (dangerous)&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa5_2">https://noscript.net/faq#qa5_2</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#hiddenprefs">https://noscript.net/features#hiddenprefs</a>
+</p>
+<p>
+<span class="bold">noscript.autoReload.useHistory</span><br>
+«Использование внутрибраузерного эквивалента history.go(0), чтобы сделать чтобы сделать<br>
+как можно больше из кэша».<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=5708075#p5708075">http://forums.mozillazine.org/viewtopic&hellip;#p5708075</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.badInstall</span><br>
+Значение изменяется само при фатальной проблеме XPCOM компонента<br>
+Components.classes[&quot;@maone.net/noscript-service;1&quot;]<br>
+(&quot;It is an internal-use-only pref which gets flipped if there is a fatal problem with<br>
+the noscript XPCOM component Components ‹…› service;1&quot;]&quot;&nbsp;barbaz)<br>
+При этом появляется уведомление: &quot;NoScript is not properly installed <br>
+and cannot operate correctly. Please install it again and check the Install&hellip;&quot;
+</p>
+<p>
+<span class="bold">noscript.bgThumbs.allowed (2.6.9.5)</span><br>
+Отдельный фоновый процесс создания миниатюр.<br>
+«Создание миниатюр происходит в отдельном процессе при включённых скриптах.<br>
+Этот процесс обходит все расширения, поэтому NoScript не может применить все свои меры<br>
+безопасности. Если его оставить, то чувство безопасности будет ложным.»<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=74313#p7431">https://forums.informaction.com/viewtopic.php?p=74313#p7431</a>&nbsp;barbaz
+</p>
+<p>
+<span class="bold">noscript.bgThumbs.disableJS (2.6.9.5)</span><br>
+Включение JavaScript в фоновом процессе создания миниатюр.
+</p>
+<p>
+<span class="bold">noscript.blockCssScanners (1.5.9 — 1.6)</span><br>
+Устаревшая настройка. Экспериментальная защита от getComputedStyle() history sniffing.<br>
+«Блокировать CSS-сканеры» (&quot;Block CSS-based scanners&quot;)
+</p>
+<p>
+<span class="bold">noscript.blockNSWB (1.1.6.11 — 2.2.4rc1)</span><br>
+Устаревшая настройка. Блокировка Web bugs, встроенных в &lt;noscript&gt;.<br>
+Дополнительно -> Недоверенные -> Запретить отображение «Web Bugs»<br>
+(Options -> Untrusted -> Forbid &quot;Web Bugs&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=2984837#p2984837">http://forums.mozillazine.org/viewtopic&hellip;#p2984837</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=33321#p33321">https://forums.informaction.com/viewtopic.php?p=33321#p33321</a>
+</p>
+<p>
+<span class="bold">noscript.canonicalFQDN (1.2.9.6)</span><br>
+Управление канонизацией доменов (<a href="https://www.gnu.org/software/libc/manual/html_node/Host-Identification.html">Fully Qualified Domain Name</a>), заканчивающихся точкой.<br>
+Работает только если NoScript может выполнять запросы DNS (т.е. не используется прокси).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=4463#p4463">https://forums.informaction.com/viewtopic.php?p=4463#p4463</a>
+</p>
+<p>
+<span class="bold">noscript.cascadePermissions (2.6.8.26)</span><br>
+Если true: пользователь сможет разрешить/запретить ВСЕ скрипты на странице (в том числе и<br>
+в субдокументах), переключив разрешение документа верхнего уровня.<br>
+Чтобы избежать путаницы, в меню разрешений будет показано разрешение только для <br>
+документа верхнего уровня (в настоящее время выделен жирным шрифтом).<br>
+&nbsp;&nbsp;Если  false: сохраняется текущее поведение, позволяющее запрещать/разрешать скрипты<br>
+в зависимости от их происхождения.<br>
+&nbsp;&nbsp;В любом случае, скрипты, внесённые в noscript.untrusted, будут заблокированы.<br>
+&nbsp;&nbsp;«Эти функции добавляются по желанию проекта TOR, полезны для пользователей TOR Browser и,<br>
+возможно, для некоторых постоянных пользователей NoScript.»<br>
+В 2.6.8.31 внесено в Настройки -&gt; Дополнительно -&gt; Доверенные<br>
+«Каскадное разрешение скриптов третьей стороны»<br>
+(Options -&gt; Advanced -&gt; Trusted &quot;Cascade top document’s permissions ‹…›&quot;).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=69787#p69787">https://forums.informaction.com/viewtopic&hellip;#p69787</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.clearClick (1.8.2, exceptions — 1.8.9)</span><br>
+1 — на недоверенных.<br>
+2 — на доверенных.<br>
+3 — везде.<br>
+0 — выключен.<br>
+<a href="https://noscript.net/faq#qa7_1">https://noscript.net/faq#qa7_1</a>
+</p>
+<p>
+<span class="bold">noscript.clearClick.plugins</span><br>
+ClearClick для встроенных плагинов. Plugin content и фреймы насильственно делаются<br>
+непрозрачными. Если размер превышает видимую область, то появляется полоса прокрутки.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2008/10/08/hello-clearclick-goodbye-clickjacking/">https://hackademix.net/2008/10/08/hello-clearclick-goodbye-clickjacking/</a>
+</p>
+<p>
+<span class="bold">noscript.clearClick.rapidFireCheck (2.1.2.4rc2)</span><br>
+Против Double-clickjacking (пользователь через запрос злоумышленника перенаправляется<br>
+на авторизацию у OAuth-провайдеров. <a href="https://noscript.net/downloads/ClearClick_WAS2012_rv2.pdf">Rapid fire check</a>.pdf).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2011/07/11/fancy-clickjacking-tougher-noscript/">https://hackademix.net/2011/07/11/fancy-clickjacking-tougher-noscript/</a>
+</p>
+<p>
+<span class="bold">noscript.clearClick.subexceptions (1.9.1.8)</span><br>
+Источники встроенного контента, которые не должны быть защищены ClearClick.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=7861&amp;p=35429">https://forums.informaction.com/viewtopic&hellip;=35429</a>
+</p>
+<p>
+<span class="bold">noscript.clearClick.threshold (2.3.9rc1)</span><br>
+Пороговое процентное значение сравнения снимков того, что видит пользователь и<br>
+элементов содержимого страницы по отдельности (без наложений слоёв).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq/#clearclick">https://noscript.net/faq/#clearclick</a>
+</p>
+<p>
+<span class="bold">noscript.collapseObject (1.1.9.7)</span><br>
+Настройки -&gt; Встроенные объекты -&gt; «Сворачивать заблокированные объекты»<br>
+(Options -&gt; Embeddings -&gt; &quot;Collapse blocked objects&quot;)
+</p>
+<p>
+<span class="bold">noscript.confirmSiteInfo</span><br>
+false — При нажатии СКМ на любой строке меню разрешений не показывать окошко с чекбоксом<br>
+«Вы собираетесь узнать информацию о сайте ‹…› Продолжить?»<br>
+(&quot;Yu’re about to ask information ‹…› Do you want to continue?&quot;).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=48084#p48084">https://forums.informaction.com/viewtopic&hellip;#p48084</a>&nbsp;mjh563
+</p>
+<p>
+<span class="bold">noscript.confirmUnblock (1.1.3.1)</span><br>
+Настройки -&gt; Встроенные объекты -&gt; «Подтверждать временную разблокировку объекта»<br>
+(Options -&gt; Embeddings -&gt; &quot;Ask for confirmation before temporarily unblocking an object&quot;)
+</p>
+<p>
+<span class="bold">noscript.confirmUnsafeReload (1.1.4.8RC1)</span><br>
+Показывать <a href="https://forum.mozilla-russia.org/uploaded/injectionCheck-2.png">окно подтверждения</a> при небезопасной (XSS) перезагрузке.<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=5985695#p5985695">http://forums.mozillazine.org/viewtopic&hellip;#p5985695</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa4_3">https://noscript.net/faq#qa4_3</a>
+</p>
+<p>
+<span class="bold">noscript.consoleDump;1 (1.1.3.6)</span><br>
+<span class="bold">noscript.consoleLog;true</span><br>
+Отображать в консоли ошибок срабатывание и блокировку скриптов (не только ABE).<br>
+«Предупреждение: это может быть помехой, влияющей на<br>
+производительность просмотра.»&nbsp;Giorgio&nbsp;Maone<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=5261">https://forums.informaction.com/viewtopic.php?f=7&amp;t=5261</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=71950#p71950">https://forums.informaction.com/viewtopic.php?p=71950#p71950</a>
+</p>
+<p>
+<span class="bold">noscript.contentBlocker (1.1.4.8.070425)</span><br>
+Настройки -&gt; Встроенные объекты «Применять эти ограничения и для доверенных сайтов»<br>
+(Options -&gt; Embeddings -&gt; &quot;Apply these restrictions to whitelisted sites too&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#flashblock">https://noscript.net/features#flashblock</a>
+</p>
+<p>
+<span class="bold">noscript.cp.last</span><br>
+true гарантирует, что NoScript сработает после ABP.<br>
+false — случайный порядок.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=8950#p8950">https://forums.informaction.com/viewtopic&hellip;#p8950</a><br>
+«Это сделано по многочисленным просьбам, чтобы заблокированное ABP не отображалось<br>
+placeholder’ом NoScript.<br>
+Я согласен, что это может быть весьма неэффективно, так как фильтры ABP медленнее, чем <br>
+блокировки NoScript, но как только ABP блокирует один объект, он не передаётся в NoScript<br>
+в любом случае (раньше было наоборот).<br>
+Однако вы можете вернуться к старому поведению, переключив noscript.cp.last в false<br>
+и перезагрузить браузер.»<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=5130455#p5130455">http://forums.mozillazine.org/viewtopic&hellip;#p5130455</a>&nbsp;Giorgio&nbsp;Maone<br>
+По умолчанию, NS всегда приходит последний: это было введено несколько лет назад (2011),<br>
+чтобы позволить пользователям ABP увидеть среди «блокируемых объектов» ABP те, которые<br>
+позже будут заблокированы NoScript’ом . Если false, порядок блокировки будет зависеть от<br>
+порядка регистрации компонентов, который не всегда очевиден.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=36488#p36488">https://forums.informaction.com/viewtopic&hellip;#p36488</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.ctxMenu</span><br>
+Настройки -&gt; Внешний вид «Пункт в контекстном меню» (Options -&gt; Appearance &quot;Contextual menu&quot;)
+</p>
+<p>
+<span class="bold">noscript.default</span><br>
+Белый список по умолчанию, при экспорте настроек не отражается в сохраняемом файле<br>
+(см. также noscript.allowWhitelistUpdates).
+</p>
+<p>
+<span class="bold">noscript.doNotTrack.enabled (2.0.9rc4)</span><br>
+Аналог настройки браузера «Я не хочу чтобы меня отслеживали» был сделан для Fx 3.*, где этой <br>
+настройки не было. &quot;true&quot; имеет преимущество перед настройкой Fx/SM «Не сообщать веб-сайтам<br>
+о моей настройке отслеживания». Если в Fx/SM отмечено «Я не хочу чтобы меня отслеживали»,<br>
+то &quot;false&quot; в NS будет игнорироваться.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=38959#p38959">https://forums.informaction.com/viewtopic&hellip;#p38959</a>&nbsp;Tom&nbsp;T.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2010/12/28/x-do-not-track-support-in-noscript/">https://hackademix.net/2010/12/28/x-do-not-track-support-in-noscript/</a>
+</p>
+<p>
+<span class="bold">noscript.doNotTrack.exceptions (2.0.9rc4)</span><br>
+Список URL’ов, которым не отправляется сообщение &quot;Do Not Track&quot;.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2010/12/28/x-do-not-track-support-in-noscript/">https://hackademix.net/2010/12/28/x-do-not-track-support-in-noscript/</a><br>
+&nbsp;&nbsp;&nbsp;<a href="http://bbs.kafan.cn/thread-1621404-1-1.html">http://bbs.kafan.cn/thread-1621404-1-1.html</a>&nbsp;462588842<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=38975#p38975">https://forums.informaction.com/viewtopic&hellip;#p38975</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.doNotTrack.forced (2.0.9rc4)</span><br>
+Список URL’ов, которым отправляется сообщение &quot;Do Not Track&quot;, даже если они есть в исключениях.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2010/12/28/x-do-not-track-support-in-noscript/">https://hackademix.net/2010/12/28/x-do-not-track-support-in-noscript/</a><br>
+«Проблема с этим подходом заключается в том, что если пользователь активирует настройки<br>
+браузера «Я не хочу чтобы меня отслеживали», NS настройки exceptions и forced сайтов<br>
+не работают (потому что Firefox всегда будет добавлять заголовок DNT 1).»<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=38994#p38994">https://forums.informaction.com/viewtopic.php?p=38994#p38994</a>&nbsp;Giorgio&nbsp;Maone<br>
+С v 2.0.9.7rc4 заголовок отправляется и локальным адресам.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=5767">https://forums.informaction.com/viewtopic.php?f=7&amp;t=5767</a>
+</p>
+<p>
+<span class="bold">noscript.docShellJSBlocking (1.6.9.6, 1.7.2)</span><br>
+0 — не блокировать <a href="https://wiki.mozilla.org/DocShell">docShellJS</a>.<br>
+1 — блокировать на недоверенных.<br>
+2 — блокировать везде, кроме белого списка (позволяет наследовать cross-frame блокировку JS).<br>
+Удалено в 2.9.5.3rc1, <a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=22477">обсуждение</a>.
+</p>
+<p>
+<span class="bold">noscript.dropXssProtection (2.2.3rc3)</span><br>
+Запрет <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=704354">перетаскивания</a> javascript: и data: URL.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=25658#p25658">https://forums.informaction.com/viewtopic.php?p=25658#p25658</a>&nbsp;al_9x
+</p>
+<p>
+<span class="bold">noscript.ef.enabled (1.9.9.70)</span><br>
+Настройки -&gt; Дополнительно -&gt; Внешние фильтры «Использовать внешние фильтры»<br>
+("Options -&gt; Advanced -&gt; External filters &quot;Enable external filters&quot;)<br>
+В v 2.6.8.13 из Настроек убрали этот пункт, поскольку <a href="https://github.com/rtezli/Blitzableiter">Blitzableiter</a> заглох.<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=10&amp;t=8582">https://forums.informaction.com/viewtopic.php?f=10&amp;t=8582</a>
+</p>
+<p>
+<span class="bold">noscript.emulateFrameBreak (1.8.2)</span><br>
+Отключение JavaScript с использованием настроек вашего браузера фактически нарушает защиту <br>
+анти Clickjacking на основе JavaScript, возможно развёрнутую на целевом сайте.<br>
+true — эмуляция &quot;frame busting&quot; для фреймов, где JS отключён.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa7_5">https://noscript.net/faq#qa7_5</a>
+</p>
+<p>
+<span class="bold">noscript.eraseFloatingElements (2.5.3rc3)</span><br>
+Удерживая нажатую ЛКМ на абсолютно позиционированном элементе страницы и нажав клавишу DEL<br>
+на клавиатуре, можно его удалить, если скрипты отключены. Начиная с версии 5.0.2, работает<br>
+и на страницах из белого списка.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/#news">https://noscript.net/#news</a>
+</p>
+<p>
+<span class="bold">noscript.excaps (1.1.4.5.070127)</span><br>
+Для разрешения <a href="http://kb.mozillazine.org/Security_Policies#Overview">CAPS</a> конфликтов, например с расширениями Google, локальными ссылками.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=70688">https://forums.informaction.com/viewtopic.php?p=70688</a>
+</p>
+<p>
+<span class="bold">noscript.exportDir (1.9.2.91, 2.2.3)</span><br>
+Путь к текстовому файлу с <a href="https://noscript.net/faq#qa2_4">экспортированными настройками</a>.
+</p>
+<p>
+<span class="bold">noscript.fakeScriptLoadEvents.* (2.6.8.24)</span><br>
+Отправляются синтетические события load и подавляются события error для<br>
+заблокированных скриптов, чтобы обойти средства обеспечения выполнения скриптов.<br>
+Эта функция инициирована по умолчанию только для загрузчика модулей Require.js,<br>
+но может быть полностью полностью настроена:<br>
+&nbsp;&nbsp;.enabled — on/off<br>
+&nbsp;&nbsp;.onlyRequireJS — true (по умолчанию) применяется только к скриптам,<br>
+инициированным Require.js<br>
+&nbsp;&nbsp;.exceptions — AddressMatcher шаблоны URL-адресов исходных скриптов,<br>
+при блокировке которых не должны вызываться поддельные события load<br>
+&nbsp;&nbsp;.docExceptions — AddressMatcher шаблоны URL-адресов документов, где<br>
+не должны вызываться поддельные события load.
+</p>
+<p>
+<span class="bold">noscript.filterXExceptions (1.1.4.6.070321)</span><br>
+Настройки -&gt; Дополнительно -&gt; XSS «Исключения анти-XSS защиты»<br>
+(Options -&gt; Advanced -&gt; XSS &quot;Anti-XSS Protection Exceptions&quot;)<br>
+Исключения из XSS фильтров для некоторых «доверенных» адресов,<br>
+требующих сложных кросс-сайтовых запросов.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa4_4">https://noscript.net/faq#qa4_4</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#xssopts">https://noscript.net/features#xssopts</a>
+</p>
+<p>
+<span class="bold">noscript.filterXGet</span><br>
+Настройки -&gt; Дополнительно -&gt; XSS «Фильтровать подозрительные межсайтовые запросы»<br>
+(Options -&gt; Advanced -&gt; XSS &quot;Sanitize cross-site suspicious requests&quot;)<br>
+Подозрительными считаются запросы от недоверенных источников, возможно содержащие HTML или JS<br>
+инъекции, к доверенным разрешённым или временно разрешённым.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#xssopts">https://noscript.net/features#xssopts</a>
+</p>
+<p>
+<span class="bold">noscript.filterXGetRx (1.1.4.6.070318)</span><br>
+Анти-XSS фильтр, применяющийся к запросам от неизвестных (ограниченных) сайтов.<br>
+Работает, частично заменяя «небезопасные» части URL «безопасными» эквивалентами<br>
+с помощью регулярного выражения.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=79513#p79513">https://forums.informaction.com/viewtopic&hellip;#p79513</a>&nbsp;barbaz
+</p>
+<p>
+<span class="bold">noscript.filterXPost (1.1.4.6.070318)</span><br>
+Настройки -&gt; Дополнительно -&gt; XSS «Заменять межсайтовые POST-запросы на GET-запросы без данных»<br>
+(Options -&gt; Advanced -&gt; XSS &quot;Turn cross-site POST ‹…› requests&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#xssopts">https://noscript.net/features#xssopts</a>
+</p>
+<p>
+<span class="bold">noscript.firstRunRedirection (1.9.2.7)</span><br>
+Настройки -&gt; Уведомления «Показывать примечания к релизу при обновлениях»<br>
+(Options -&gt; Notifications &quot;Display the release notes from updates&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa2_5">https://noscript.net/faq#qa2_5</a>
+</p>
+<p>
+<span class="bold">noscript.fixLinks (1.1.3.6)</span><br>
+Настройки -&gt; Дополнительно -&gt; Недоверенные «Пытаться исправить JavaScript-ссылки»<br>
+(Options -&gt; Advanced -&gt; Untrusted &quot;Attempt to fix JavaScript links&quot;)<br>
+На недоверенных сайтах NoScript будет пытаться превратить javascript: ссылки в обычные ссылки.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#extraopts">https://noscript.net/features#extraopts</a> -&gt; Untrusted<br>
+<p>
+<span class="bold">noscript.fixURI.exclude (1.1.6.13)</span><br>
+Список протоколов, разделённых пробелами, которые не должны быть экранированы NoScript,<br>
+например:<br>
+^custombutton://<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forum.mozilla-russia.org/viewtopic.php?pid=235967#p235967">https://forum.mozilla-russia.org/viewtopic.php?pid=235967#p235967</a>&nbsp;Infocatcher<br>
+e2dk<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=3375377#p3375377">http://forums.mozillazine.org/viewtopic&hellip;#p3375377</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.forbidActiveContentParentTrustCheck</span><br>
+<a href="https://hackademix.net/2008/01/06/flash-xss-protection-for-users/">Защита от Flash XSS</a>.<br>
+Флэш-апплеты, происходящие из доверенных сайтов (например фильмы youtube.com) заблокированы,<br>
+если встроены на недоверенных сайтах. Можно активировать эти объекты без внесения страницы<br>
+в белый список, просто нажав на placeholder NoScript.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa4_7">https://noscript.net/faq#qa4_7</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#flash_xss">https://noscript.net/features#flash_xssng</a>
+</p>
+<p>
+<span class="bold">noscript.forbidBGRefresh (1.9.9.81)</span><br>
+Блокировка обновления вкладок не в фокусе (<a href="http://www.azarask.in/blog/post/a-new-type-of-phishing-attack">tabnapping protection</a>).<br>
+0 — не блокировать.<br>
+1 — блокировать обновление вкладок с недоверенными.<br>
+2 — блокировать обновление вкладок с доверенными.<br>
+3 — блокировать обновление и тех и других.
+</p>
+<p>
+<span class="bold">noscript.forbidExtProtSubdocs</span><br>
+true — запретить всем внешним обработчикам протоколов обработку всех типов контента,<br>
+кроме document (<a href="https://developer.mozilla.org/ru/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIContentPolicy#Content_types">nsIContentPolicy type 6</a> ).<br>
+(&quot;if set to true, block all external protocol handlers from handling anything other<br>
+than a document (nsIContentPolicy type 6)&quot;&nbsp;barbaz)
+</p>
+<p>
+<span class="bold">noscript.forbidIFrames (1.1.7.1)</span><br>
+Настройки -&gt; Встроенные объекты «Запретить &lt;IFRAME&gt;»<br>
+(Options -&gt; Embeddings &quot;Forbid &lt;IFRAME&gt;&quot;)<br>
+IFRAMEs, встроенные в недоверенные страницы, всегда блокируются, за исключением<br>
+загрузки в них содержимого родительского сайта.<br>
+IFRAMEs, встроенные в доверенные страницы, блокируются, если пытаются загрузить<br>
+содержимое из недоверенных сайтов.<br>
+Когда ограничение применяется и к доверенным сайтам, IFRAME может быть загружен,<br>
+если это не загрузка содержимого из того же сайта что и его родитель.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#iframe">https://noscript.net/faq#iframe</a>
+<br>
+</p>
+<p>
+<span class="bold">noscript.forbidIFramesContext (1.1.7.4)</span><br>
+Управление блокировкой IFRAME в зависимости от родительской страницы.<br>
+0 — блокировать все.<br>
+1 — блокировать, если родитель на другом сайте.<br>
+2 — блокировать, если родитель в другом домене.<br>
+3 — блокировать, если родитель в другом домене второго уровня.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa4_8">https://noscript.net/faq#qa4_8</a>
+<p>
+<span class="bold">noscript.forbidIFramesParentTrustCheck</span><br>
+IFRAMEs, происходящие из доверенных сайтов заблокированы, если встроены<br>
+на недоверенных сайтах.
+</p>
+<p>
+<span class="bold">noscript.forbidImpliesUntrust (1.1.4.5.070207)</span><br>
+true — при использовании «Запретить somesite.com», somesite.com автоматически помечаются<br>
+как недоверенные, а не просто исчезают из белого списка.<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=5678135#p5678135">http://forums.mozillazine.org/viewtopic.php?p=5678135#p5678135</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.forbidMedia (1.9.9.10)</span><br>
+Блокировка HTML5, независимая(!) от Настройки -&gt; Встроенные объекты «Запретить другие плагины»<br>
+(Options -&gt; Embeddings &quot;Forbid other plugins&quot;).
+</p>
+<p>
+<span class="bold">noscript.forbidMetaRefresh (1.1.4.7.070419, 1.1.4.8.070422)</span><br>
+Настройки -&gt; Дополнительно -&gt; Недоверенные<br>
+«Запретить META перенаправления внутри элементов &lt;NOSCRIPT&gt;»<br>
+(Options -&gt; Advanced -&gt; Untrusted &quot;Forbid META redirections inside &lt;NOSCRIPT&gt; elements&quot;)<br>
+ЛКМ — разрешить однократно , Shift+ЛКМ — разрешить и запомнить на сессию, СКМ — скрыть иконку.<br>
+META перенаправления часто используются для отправки пользователя на страницу с сообщением<br>
+«Пожалуйста включите JavaScript».<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#extraopts">https://noscript.net/features#extraopts</a> -&gt; Untrusted
+</p>
+<p>
+<span class="bold">noscript.forbidMetaRefresh.remember (1.1.4.8RC1)</span><br>
+Запоминание разрешения/запрещения META перенаправлений на текущую сессию.<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=2848886#p2848886">http://forums.mozillazine.org/viewtopic.php?p=2848886#p2848886</a>
+</p>
+<p>
+<span class="bold">noscript.forbidMixedFrames (1.8.2.2)</span><br>
+Если IFRAMEs запрещены, то вложенные в них FRAMEs тоже запрещены.
+</p>
+<p>
+<span class="bold">noscript.forbidWebGL (2.1.0.6rc4)</span><br>
+Настройки -&gt; Встроенные объекты -&gt; Запретить WebGL (Options -&gt; Embedding -&gt; Forbid WebGL)<br>
+Можно разрешать для отдельных страниц:<br>
+меню разрешений -> Заблокированные объекты -> Временно разрешить WebGL@http…
+</p>
+<p>
+<span class="bold">noscript.forbidXBL (1.1.8.5)</span><br>
+0 — разрешить все <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XBL">XBL</a>.<br>
+1 — разрешить доверенные и data XBL на любом сайте.<br>
+2 — разрешить доверенные и data XBL на доверенных сайтах.<br>
+3 — разрешить только доверенные XBL на доверенных сайтах.<br>
+4 — разрешить только доверенные XBL с того же сайта или chrome.<br>
+5 — разрешить только chrome XBL.
+</p>
+<p>
+<span class="bold">noscript.forbidXHR (1.4.9.4)</span><br>
+0 — разрешить любые <a href="https://learn.javascript.ru/ajax-xmlhttprequest">XHR</a>.<br>
+1 — разрешить межсайтовые XHR только через доверенные сайты.<br>
+2 — разрешить XHR только с того же сайта.<br>
+3 — запретить все XHR.
+</p>
+<p>
+<span class="bold">noscript.frameOptions.enabled (1.9.9.03)</span><br>
+Заголовки <a href="https://learn.javascript.ru/clickjacking#%D0%B7%D0%B0%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BA-x-frame-options">X-FRAME-OPTIONS</a> не должны быть проигнорированы.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2009/12/02/google-talk-badges-vs-x-frame-options/">https://hackademix.net/2009/12/02/&hellip;x-frame-options/</a><br>
+Если появляется окно «This content cannot be displayed in a frame», то переключить в false.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=29006#p29006">https://forums.informaction.com/viewtopic&hellip;#p29006</a>
+</p>
+<p>
+<span class="bold">noscript.frameOptions.parentWhitelist (1.9.9.03)</span><br>
+Исключения некоторых родительских окон из X-Frame-Options проверки их встроенных фреймов.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2009/12/02/google-talk-badges-vs-x-frame-options/">https://hackademix.net/2009/12/02/google-talk-badges-vs-x-frame-options/</a><br>
+</p>
+<p>
+<span class="bold">noscript.global</span><br>
+Настройки -&gt; Белый список «Глобальное разрешение скриптов (опасно)»<br>
+(Options -&gt; Whitelist &quot;Scripts Globally Allowed (dangerous)&quot;)<br>
+При переключении через config, а не через Настройки, требуется перезапуск.<br>
+Отмеченные как «Недоверенные» не разрешаются.<br>
+«Другими словами, вы используете режим &quot;Черный список&quot;. Это как YesScript, но с гораздо более <br>
+широкими возможностями защиты (анти-XSS, анти-ClickJacking, ABE и так далее).»<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=13058#p13058">https://forums.informaction.com/viewtopic&hellip;#p13058</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.globalHttpsWhitelist</span><br>
+Настройки -&gt; Дополнительно -&gt; HTTPS -&gt; Разрешения<br>
+«Разрешить все HTTPS скрипты в HTTPS документах»<br>
+(Options -&gt; Advanced -&gt; HTTPS -&gt; Permissions<br>
+&quot;Allow HTTPS scripts globally on HTTPS documents&quot;)
+</p>
+<p>
+<span class="bold">noscript.globalwarning (1.1.4.7.070413)</span><br>
+Появление предупреждения при выборе пункта меню разрешений<br>
+«Разрешить скрипты глобально (опасно)» (&quot;Allow Scripts Globally (dangerous)&quot;).
+</p>
+<p>
+<span class="bold">noscript.hideOnUnloadRegExp</span><br>
+Код, контролируемый данным параметром, срабатывает при наступлении события <a href="https://developer.mozilla.org/ru/docs/Using_Firefox_1.5_caching#pagehide_event">pagehide</a>.<br>
+Перечисленные типы содержимого скрываются с помощью CSS и заменяются на dummy объект<br>
+перед уходом со страницы или закрытием вкладки. (&quot;It is hiding an object with CSS and stick<br>
+in a dummy object as well. This code is called on the <a href="https://developer.mozilla.org/en-US/Firefox/Releases/1.5/Using_Firefox_1.5_caching#pagehide_event">&quot;pagehide&quot; event</a>.<br>
+The pref is a regex specifying which embedding MIME types to hide and replace by dummy<br>
+before the page unloads.&quot;&nbsp;barbaz)
+</p>
+<p>
+<span class="bold">noscript.hoverUI (2.0.3rc1)</span><br>
+Настройки -&gt; Основные -&gt; «Открывать меню разрешений при наведении мыши на значок NoScript»<br>
+(Options -&gt; General -&gt; Open permissions menu when mouse howers over NoScript’s icon)
+</p>
+<p>
+<span class="bold">noscript.hoverUI.excludeToggling (2.0.9rc3)</span><br>
+Настройки -&gt; Основные -&gt; «Нажатием на значок переключать разрешение<br>
+документа верхнего уровня активной вкладки»<br>
+(Options -&gt; General -&gt; &quot;Left clicking on NoScript toolbar button ‹…› site&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=25322#p25322">https://forums.informaction.com/viewtopic.php?p=25322#p25322</a>
+</p>
+<p>
+<span class="bold">noscript.httpsDefWhitelist (2.9.0.5, 2.9.0.6)</span><br>
+Автоматическое использование https для сайтов из noscript.default,<br>
+если скрипты этих сайтов разрешены в данный момент.
+</p>
+<p>
+<span class="bold">noscript.httpsForced (1.8.0.6)</span><br>
+Настройки -&gt; Дополнительно -&gt; HTTPS -&gt; Поведение<br>
+«Заставлять указанные сайты использовать безопасное (HTTPS) соединение:»<br>
+(Options -&gt; Advanced -&gt; HTTPS -&gt; Behavior <br>
+&quot;Force the following sites to use secure (HTTPS) connections:&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa6_3">https://noscript.net/faq#qa6_3</a>
+</p>
+<p>
+<span class="bold">noscript.httpsForcedBuiltIn (2.6.9.6rc3)</span><br>
+Встроенный список применения https.
+</p>
+<p>
+<span class="bold">noscript.httpsForcedExceptions</span><br>
+Настройки -&gt; Дополнительно -&gt; HTTPS -&gt; Поведение «Не принуждать ‹…› для сайтов:»<br>
+(Options -&gt; Advanced -&gt; HTTPS -&gt; Behavior &quot;Never force ‹…› sites:&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa6_3">https://noscript.net/faq#qa6_3</a>
+</p>
+<p>
+<span class="bold">noscript.https.showInConsole</span><br>
+Отображать в консоли загрузку страниц с заголовком &quot;Strict-Transport-Security&quot;<br>
+(например: [NoScript HTTPS] FORCED SECURE on https://noscript.net )<br>
+и срабатывания noscript.httpsForced, при попытке перейти на эти адреса по http://<br>
+(например: [NoScript HTTPS] Forced URI https://ip-check.info/?foundHTTPS=true,<br>
+если ip-check.info внесён в список noscript.httpsForced).
+</p>
+<p>
+<span class="bold">noscript.ignorePorts (1.9.9.51)</span><br>
+true — домены, разрешаемые вручную, всегда подразумевают адреса с портами.<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=10&amp;t=5940">Этот параметр не работает</a>.
+</p>
+<p>
+<span class="bold">noscript.inclusionTypeChecking (1.9.6.5)</span><br>
+Проверка правильности Content-Type, указанного для 3rd party скриптов и CSS файлов.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=19315#p19315">https://forums.informaction.com/viewtopic&hellip;#p19315</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.inclusionTypeChecking.checkDynamic</span><br>
+Включает / отключает проверку URL-адресов, которые, по-видимому, являются<br>
+<a href="https://en.wikipedia.org/wiki/Server-side_scripting">server-side</a> скриптами (например &quot;application/unknown&quot; или содержимым текстового типа).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=19309#p19309">https://forums.informaction.com/viewtopic&hellip;#p19309</a><br>
+</p>
+<p>
+<span class="bold">noscript.injectionCheck (1.1.4.9)</span><br>
+Запросы, проверяемые injectionChecker’ом (если noscript.injectionCheckHTML;true).<br>
+0 - никогда не проверять.<br>
+1 - проверять межсайтовые запросы от временно разрешённых сайтов.<br>
+2 - проверять все межсайтовые запросы.<br>
+3 - проверять все запросы.<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=3049878#p3049878">http://forums.mozillazine.org/viewtopic&hellip;#p3049878</a>&nbsp;Giorgio&nbsp;Maone<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#injections">https://noscript.net/features#injections</a>
+</p>
+<p>
+<span class="bold">noscript.injectionCheckHTML</span><br>
+Обнаружение XSS инъекций в GET запросы от доверенных сайтов к окнам верхнего уровня.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa4_1">https://noscript.net/faq#qa4_1</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#injections">https://noscript.net/features#injections</a>
+</p>
+<p>
+<span class="bold">noscript.jsHack (1.1.9.8)</span><br>
+JS, выполняющийся до загрузки страницы, чтобы добавить недостающие функции, например:<br>
+window.name <a href="https://stackoverflow.com/questions/22889443/how-to-set-firefox-to-block-window-name#answer-25168080">https://stackoverflow.com/questions/&hellip;25168080</a><br>
+window.top <a href="http://forums.mozillazine.org/viewtopic.php?p=4366215#p4366215">http://forums.mozillazine.org/viewtopic&hellip;#p4366215</a><br>
+<a href="http://forums.mozillazine.org/viewtopic.php?p=4393645#p4393645">http://forums.mozillazine.org/viewtopic&hellip;#p4393645</a><br>
+window.urchinTracker <a href="http://forums.mozillazine.org/viewtopic.php?p=4264335#p4264335">http://forums.mozillazine.org/viewtopic&hellip;#p4264335</a>
+</p>
+<p>
+<span class="bold">noscript.jsredirectFollow (1.1.4.9)</span><br>
+true — если  в странице верхнего уровня одна единственная JavaScript ссылка,<br>
+то произойдёт автопереход по ссылке, и мы предполагаем что это JavaScript перенаправление.<br>
+default — false, поскольку это может быть использовано для принудительного перенаправления <br>
+пользователей NoScript, запрещающих JavaScript на определённой странице, на другую страницу.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#hiddenprefs">https://noscript.net/features#hiddenprefs</a>
+</p>
+<p>
+<span class="bold">noscript.jsredirectForceShow (1.1.6.26)</span><br>
+Всегда отображать JS адреса переходов внизу страницы, независимо от видимого контента.<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=3047914#p3047914">http://forums.mozillazine.org/viewtopic&hellip;#p3047914</a>
+</p>
+<p>
+<span class="bold">noscript.jsredirectIgnore (1.1.4.9)</span><br>
+false — любые невидимые ссылки или кнопки вынуждены будут отображаться,<br>
+если не присутствует, по крайней мере, один навигационный элемент.<br>
+true — отключает поиск и отображение JavaScript ссылок на страницах,<br>
+не входящих в белый список и не содержащих никаких обычных ссылок.<br>
+(тест — <a href="http://evil.hackademix.net/test/empty/form.html">evil.hackademix.net/test/empty/form.html</a>)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa3_17">https://noscript.net/faq#qa3_17</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#hiddenprefs">https://noscript.net/features#hiddenprefs</a><br>
+«Всякий раз, когда загружается недоверенная страница, NoScript проверяет<br>
+используемые ссылки и, если нет никаких обычных ссылок, он пытается &quot;делать вывод&quot;,<br>
+что JavaScript ссылки используются для перенаправления, и отображает их как обычные ссылки.<br>
+Это удобно использовать на страницах, содержащих только перенаправления JavaScript<br>
+или Flash intro, дабы избежать использования JavaScript только для того чтобы зайти на сайт.»<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=3291387#p3291387">http://forums.mozillazine.org/viewtopic&hellip;#p3291387</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.keys.tempAllowPage (2.1.6)</span><br>
+Настройка сочетания клавиш «Временно разрешить все скрипты на этой странице»<br>
+(&quot;Temporarily allow all this page&quot;).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=7666">https://forums.informaction.com/viewtopic.php?f=7&amp;t=7666</a>
+</p>
+<p>
+<span class="bold">noscript.keys.revokeTemp (2.1.6)</span><br>
+Настройка сочетания клавиш «Отменить временные разрешения»<br>
+(&quot;Revoke Temporary Permissions&quot;).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=7666">https://forums.informaction.com/viewtopic.php?f=7&amp;t=7666</a>
+</p>
+<p>
+<span class="bold">noscript.liveConnectInterception</span><br>
+Java пакеты, предоставляемые <a href="https://developer.mozilla.org/en-US/docs/Archive/Web/LiveConnect">LiveConnect</a> недоступны там, где заблокирована Java.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=5397">https://forums.informaction.com/viewtopic.php?f=7&amp;t=5397</a>
+</p>
+<p>
+<span class="bold">noscript.lockPrivilegedUI (1.1.8.3)</span><br>
+Заблокировать настройки от переключения DOM инспектором и консолью ошибок<br>
+(<a href="https://mike.kaply.com/2012/03/16/customizing-firefox-autoconfig-files/">добавляется в *.cfg</a>).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2007/12/05/plugin-security-plug-insecurity/#comment-2209">https://hackademix.net/2007/12/05/plugin-security-plug-insecurity/#comment-2209</a>
+</p>
+<p>
+<span class="bold">noscript.logDNS</span><br>
+true — логирование запросов в файле профиля noscript_dns.log.<br>
+Может отрицательно влиять на производительность.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=15300#p15300">https://forums.informaction.com/viewtopic.php?p=15300#p15300</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.mandatory</span><br>
+«Обязательная» часть белого списка (chrome, about и т.д.). Редактируется в about:config, но не<br>
+в Настройках. После изменения необходима перезагрузка браузера.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://trac.torproject.org/projects/tor/ticket/3976#comment:11">https://trac.torproject.org/projects/tor/ticket/3976#comment:11</a>&nbsp;ma1<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa1_5">https://noscript.net/faq#qa1_5</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=8&amp;t=22125">HowTo stop resource leak with NoScript</a>
+</p>
+<p>
+<span class="bold">noscript.menuAccelerators (2.1.6)</span><br>
+Вкл/выкл отображение сочетания клавиш в пунктах меню разрешений<br>
+«(Временно) разрешить все скрипты на этой странице» (&quot;(Temporary) allow all this page&quot;).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=7666">https://forums.informaction.com/viewtopic.php?f=7&amp;t=7666</a>&nbsp;Tom&nbsp;T.
+</p>
+<p>
+<span class="bold">noscript.middlemouse_temp_allow_main_site (2.6.9.27)</span><br>
+СКМ на значке NS<br>
+true — «Временно разрешить все скрипты на этой странице» (&quot;Temporarily allow all this page&quot;).<br>
+false — ничего не делать.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=20319">https://forums.informaction.com/viewtopic.php?f=7&amp;t=20319</a>
+</p>
+<p>
+<span class="bold">noscript.noping (1.1.3.6)</span><br>
+Настройки -&gt; Дополнительно -&gt; Недоверенные «Запретить использование &lt;A PING&hellip;&gt;»<br>
+(Options -&gt; Advanced -&gt; Untrusted &quot;Forbid &lt;a ping&hellip;&gt;&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=71857#p71857">https://forums.informaction.com/viewtopic.php?p=71857#p71857</a>&nbsp;barbaz<br>
+&nbsp;&nbsp;&nbsp;<a href="http://kb.mozillazine.org/Browser.send_pings#Background">http://kb.mozillazine.org/Browser.send_pings#Background</a>
+</p>
+<p>
+<span class="bold">noscript.nosniff (2.0.4)</span><br>
+Контролировать (true) или нет (false) выполнение &quot;<a href="https://www.owasp.org/index.php/List_of_useful_HTTP_headers">X-Content-Type-Options: nosniff</a>&quot;.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=22992#p22992">https://forums.informaction.com/viewtopic.php?p=22992#p22992</a><br>
+С v 2.0.9.9rc4 отображение в виде text/plain документов с отсутствующим заголовком<br>
+"Content-Type", но отправленным "X-Content-Type-Options: nosniff".
+</p>
+<p>
+<span class="bold">noscript.notify</span><br>
+Настройки -&gt; Уведомления «Отображать сообщения о заблокированных скриптах»<br>
+(Options -&gt; Notifications &quot;Show message about blocked scripts&quot;)<br>
+Это не сообщения в строке состояния. Для строки состояния см. noscript.statusLabel.<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=19932">Обсуждение количества заблокированных скриптов в уведомлении</a>
+</p>
+<p>
+<span class="bold">noscript.notify.hide</span><br>
+Настройки -&gt; Уведомления «Скрывать сообщения после X секунд»<br>
+(Options -&gt; Notifications &quot;Hide after X seconds&quot;)
+
+</p>
+<p>
+<span class="bold">noscript.notify.hidePermanent</span><br>
+true — при возврате на вкладку не показывать ещё раз сообщения о заблокированных<br>
+скриптах, если они были скрыты (нажатием на крестик или по истечении X секунд).
+</p>
+<p>
+<span class="bold">noscript.nselForce</span><br>
+Настройки -&gt; Дополнительно -&gt; Доверенные «Показывать элемент &lt;NOSCRIPT&gt;,<br>
+который следует за заблокированным &lt;SCRIPT&gt;<br>
+(Options -&gt; Advanced -&gt; Trusted &quot;Show the &lt;NOSCRIPT&gt; element ‹…›&quot;)<br>
+Отображение ближайшей замены содержимого заблокированных 3rd party тегов script, даже если<br>
+разрешены скрипты документа верхнего уровня (main page).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#extraopts">https://noscript.net/features#extraopts</a> -&gt; Trusted
+</p>
+<p>
+<span class="bold">noscript.nselNever</span><br>
+Настройки -&gt; Дополнительно -&gt; Недоверенные «Скрывать элементы &lt;NOSCRIPT&gt;<br>
+("Options -&gt; Advanced -&gt; Untrusted &quot;Hide &lt;NOSCRIPT&gt; elements&quot;)<br>
+true — скрывать содержимое контейнера <a href="https://webref.ru/html/noscript">&lt;NOSCRIPT&gt;</a>, которое должно отображаться если<br>
+запрещены скрипты.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#extraopts">https://noscript.net/features#extraopts</a> -&gt; Untrusted
+</p>
+<p>
+<span class="bold">noscript.opacizeObject (1.8.2)</span><br>
+Устаревшая настройка.<br>
+Настройки -> Встроенные объекты «Изменять прозрачность встроенных объектов на страницах&hellip;»<br>
+(Options -> Embeddings "Opaque embedded objects on pages&hellip;")<br>
+1 — недоверенных<br>
+2 — доверенных<br>
+3 — доверенных и недоверенных<br>
+0 — не изменять
+</p>
+<p>
+<span class="bold">noscript.options.tabSelectedIndexes</span><br>
+Последняя открытая вкладка в Настройках, например:<br>
+0,0,0 — Основные (General)<br>
+1,0,0 — Белый список (Whitelist)<br>
+5,4,0 — ABE
+</p>
+<p>
+<span class="bold">noscript.placeholderCollapseOnClose (2.6.8.16rc4)</span><br>
+false — при скрытии заблокированного элемента его место не заполняется другим содержимым<br>
+(см. noscript.collapseObject).
+</p>
+<p>
+<span class="bold">noscript.placeholderLongTip (2.0.9.9rc1)</span><br>
+Должны ли подсказки у заблокированных объектов включать строки запроса и хэш-фрагменты.
+</p>
+<p>
+<span class="bold">noscript.placeholderMinSize (1.8.9.3)</span><br>
+Размер меньшей стороны свёрнутых заблокированных объектов.
+</p>
+<p>
+<span class="bold">noscript.placesPrefs</span><br>
+Устаревшая настройка. В Закладках создается папка NoScript, в ней закладка [NoScript].<br>
+Настройки -> Основные «Создать резервную копию настроек в закладках для лёгкой синхронизации»<br>
+(Options -> General &quot;Backup NoScript configuration in a bookmark for easy synchronisation&quot;)
+</p>
+<p>
+<span class="bold">noscript.preset</span><br>
+Устаревшая настройка. Предустановка уровня защиты: off, low, medium, high.
+</p>
+<p>
+<span class="bold">noscript.proxiedDNS</span><br>
+«— Я использую NoScript с анонимным прокси.<br>
+Каким должно быть значение noscript.proxiedDNS, чтобы избежать утечки DNS?<br>
+— 0 наиболее строгие ограничения, это означает что NoScript не пытается выполнять<br>
+какие-либо разрешения DNS, если подключение идет через прокси.<br>
+1 предотвращение прямого разрешения DNS, если вы используете прокси SOCK5.<br>
+2 выполняет DNS-запросы когда это необходимо, независимо от настройки прокси-сервера».<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=4458#p4458">https://forums.informaction.com/viewtopic&hellip;#p4458</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.recentlyBlockedCount</span><br>
+Количество отображаемых «Недавно заблокированных сайтов» (&quot;Recently blocked sites&quot;).<br>
+&nbsp;&nbsp;&nbsp;<a href="http://bbs.kafan.cn/thread-1621404-1-1.html">http://bbs.kafan.cn/thread-1621404-1-1.html</a>&nbsp;462588842<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=38530">Обсуждение количества недавно заблокированных сайтов</a>
+</p>
+<p>
+<span class="bold">noscript.recentlyBlockedLevel</span><br>
+Как отображать «Недавно заблокированные сайты» (&quot;Recently blocked sites&quot;)<br>
+0 — не указано<br>
+1 — полные адреса&nbsp;&nbsp;http://www.123.com/<br>
+2 — полные домены&nbsp;&nbsp;www.123.com<br>
+3 — базовые домены    123.com<br>
+&nbsp;&nbsp;&nbsp;<a href="http://bbs.kafan.cn/thread-1668724-1-1.html#post_30228155">http://bbs.kafan.cn/thread-1668724-1-1.html#post_30228155</a>&nbsp;江3如此多娇
+</p>
+<p>
+<span class="bold">noscript.removalWarning (2.6.5)</span><br>
+Предупреждение о понижении уровня безопасности (Security Downgrade Warning) при <br>
+отключении или удалении NoScript. Предлагается режим чёрного списка, чтобы сохранить<br>
+меры защиты не связанные с блокировкой скриптов. В 2.6.8.41rc2 добавлен checkbox<br>
+«Всегда спрашивать подтверждение».<br>
+Предупреждение удалено в 5.1.4rc1.
+</p>
+<p>
+<span class="bold">noscript.removeSMILKeySniffer (2.2.2rc1)</span><br>
+Защита от <a href="https://ru.wikipedia.org/wiki/SMIL">scriptless SVG-based keylogging</a>.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=10&amp;t=5920">https://forums.informaction.com/viewtopic.php?f=10&amp;t=5920</a>&nbsp;al_9x
+</p>
+<p>
+<span class="bold">noscript.requireReloadRegExp (1.7.5.1)</span><br>
+Быстрая перезагрузка при разрешении указанных плагинов.
+</p>
+<p>
+<span class="bold">noscript.restrictSubdocScripting (2.6.8.26)</span><br>
+true — скрипты, даже внесённые в белый список, не могут быть загружены и запущены<br>
+во FRAMEs и IFRAMEs, URL родительского документа которых не добавлен в белый список.<br>
+false — сохраняются правила загрузки и запуска скриптов только в зависимости от их<br>
+происхождения и независимо от их родителей.<br>
+«Эти функции добавляются по желанию проекта TOR, полезны для пользователей TOR Browser и,<br>
+возможно, для некоторых постоянных пользователей NoScript.»<br>
+В 2.6.8.31 внесено в Настройки -&gt; Дополнительно -&gt; Недоверенные<br>
+«Блокировать скрипты из белого списка в субдокументах не из белого списка»<br>
+(Options -&gt; Advanced -&gt; Untrusted &quot;Block scripting ‹…› pages&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=69787#p69787">https://forums.informaction.com/viewtopic&hellip;#p69787</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.safeJSRx (1.1.6.18)</span><br>
+По умолчанию предотвращается выполнение JavaScript с привилегиями chrome<br>
+(<a href="https://www.mozilla.org/en-US/security/known-vulnerabilities/firefox-3.5/#firefox3.5.2">https://www.mozilla.org/en-US/security/&hellip;#firefox3.5.2</a>).<br>
+Регулярное выражение позволяет определённым скриптам «обойти» это ограничение.<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=3034091#p3034091">http://forums.mozillazine.org/viewtopic&hellip;#p3034091</a>&nbsp;Giorgio&nbsp;Maone<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=79513#p79513">https://forums.informaction.com/viewtopic&hellip;#p79513</a>&nbsp;barbaz
+</p>
+<p>
+<span class="bold">noscript.sanitizePaste (2.6.9.16)</span><br>
+Дополнительная очистка HTML при вставке форматированного текста в<br>
+контент-редактируемые элементы.
+</p>
+<p>
+<span class="bold">noscript.secureCookies (1.8.0.5)</span><br>
+Настройки -&gt; HTTPS -&gt; Cookies «Автоматическая система управления безопасностью куки»<br>
+(Options -&gt; HTTPS -&gt; Cookies -&gt; &quot;Enable Automatic Secure Cookies Management&quot;)<br>
+К заголовкам Set-Cookie «на лету» добавляется недостающий флаг &quot;;Secure&quot;.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa6_4">https://noscript.net/faq#qa6_4</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2008/09/10/noscript-vs-insecure-cookies/">https://hackademix.net/2008/09/10/noscript-vs-insecure-cookies/</a>
+</p>
+<p>
+<span class="bold">noscript.secureCookies.perTab (1.8.1.2)</span><br>
+Для обеспечения совместимости удаляется флаг &quot;;Secure&quot;, добавленный NoScript’ом,<br>
+при переходе из зашифрованной в незашифрованную часть сайта с теми же куки.<br>
+true — при переходе в той же вкладке.<br>
+false — не только в той же вкладке, но и при переходе на другую вкладку сайта.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa6_4">https://noscript.net/faq#qa6_4</a>
+</p>
+<p>
+<span class="bold">noscript.secureCookies.recycle</span><br>
+true — флаг &quot;;Secure&quot; не удаляется даже при переходе HTTPS -&gt; HTTP -&gt; HTTPS.<br>
+(&quot;if set to true, NoScript patches cookies even when navigating from a plain HTTP site to<br>
+a HTTPS site.&quot;&nbsp;barbaz)
+</p>
+<p>
+<span class="bold">noscript.secureCookiesForced (1.8.0.6)</span><br>
+Настройки -&gt; HTTPS -&gt; Cookies -&gt; Автоматическая система управления безопасностью куки<br>
+«Использовать шифрование для ‹…› следующих сайтов:»<br>
+(Options -&gt; HTTPS -&gt; Cookies -&gt; Enable Automatic Secure Cookies Management<br>
+&quot;Force encryption for ‹…› sites:&quot;)<br>
+Адреса сайтов писать через пробел.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa6_4">https://noscript.net/faq#qa6_4</a>
+</p>
+<p>
+<span class="bold">noscript.showAddress</span><br>
+Настройки -&gt; Внешний вид «Полные адреса (http://www.noscript.net)»<br>
+(Options -&gt; Appearance &quot;Full Adresses (http://www.noscript.net)&quot;)
+</p>
+<p>
+<span class="bold">noscript.showAllowPage</span><br>
+Настройки -&gt; Внешний вид «Разрешить все скрипты на этой странице»<br>
+(Options -&gt; Appearance &quot;Allow all this page&quot;)<br>
+Не относится к заблокированным объектам, только к скриптам.
+</p>
+<p>
+<span class="bold">noscript.showBaseDomain</span><br>
+Настройки -&gt; Внешний вид «Базовые домены 2-го уровня (noscript.net)»<br>
+(Options -&gt; Appearance &quot;Base 2nd level Domains (noscript.net)&quot;)
+</p>
+<p>
+<span class="bold">noscript.showBlankSources (1.9.9.70)</span><br>
+true — отображение about:blank  в меню разрешений в качестве вторичного источника.<br>
+<a href="https://noscript.net/faq#qa1_9">noscript.net/faq#qa1_9</a>
+</p>
+<p>
+<span class="bold">noscript.showDistrust</span><br>
+Настройки -&gt; Внешний вид «Отметить [...] как Недоверенный»<br>
+(Options -&gt; Appearance &quot;Mark [...] as Untrusted&quot;)
+</p>
+<p>
+<span class="bold">noscript.showDomain</span><br>
+Настройки -&gt; Внешний вид «Полные домены (www.noscript.net)»<br>
+(Options -&gt; Appearance &quot;Full Domains (www.noscript.net)&quot;)
+</p>
+<p>
+<span class="bold">noscript.showPlaceholder</span><br>
+Настройки -&gt; Встроенные объекты «Заполнитель вместо заблокированных объектов»<br>
+(Options -&gt; Embeddings &quot;Show placeholder icon&quot;)
+</p>
+<p>
+<span class="bold">noscript.showRecentlyBlocked (1.9.8.5, 1.9.8.6)</span><br>
+Настройки -&gt; Внешний вид «Недавно заблокированные сайты»<br>
+(Options -&gt; Appearance &quot;Recently blocked sites&quot;)<br>
+Список стирается при удалении истории, <a href="https://forums.informaction.com/viewtopic.php?p=70506#p70506">но не при выходе из приватного режима</a>.<br>
+Перед закрытием приватного окна нужно нажимать на «Сброс».<br>
+Обсуждение ненужности этого пункта меню: <a href="https://forums.informaction.com/viewtopic.php?p=38597#p38597">1</a>, 
+<a href="https://forums.informaction.com/viewtopic.php?f=10&amp;t=8215">2</a>.
+</p>
+<p>
+<span class="bold">noscript.showRevokeTemp (1.1.9.7, 1.9.8.6)</span><br>
+Настройки -&gt; Внешний вид «Отменить временные разрешения»<br>
+(Options -&gt; Appearance &quot;Revoke Temporary Permissions&quot;)<br>
+Нужно вручную отменять перед закрытием приватного окна: <a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=4456&amp;p=18850">1</a>, <a href="https://forums.informaction.com/viewtopic.php?f=10&amp;t=17144">2</a>.
+</p>
+<p>
+<span class="bold">noscript.showTemp</span><br>
+Настройки -&gt; Внешний вид «Временно разрешить [...]»<br>
+(Options -&gt; Appearance &quot;Temporarily allow [...]&quot;)
+</p>
+<p>
+<span class="bold">noscript.showTempAllowPage (1.6.9.6)</span><br>
+Настройки -&gt; Внешний вид «Временно разрешить все скрипты на этой странице»<br>
+(Options -&gt; Appearance &quot;Temporarily allow all this page&quot;)<br>
+Не относится к заблокированным объектам, только к скриптам.
+</p>
+<p>
+<span class="bold">noscript.showTempToPerm</span><br>
+Настройки -&gt; Внешний вид «Сохранить установленные разрешения»<br>
+(Options -&gt; Appearance &quot;Make page permissions permanent&quot;)
+</p>
+<p>
+<span class="bold">noscript.showUntrustedPlaceholder (1.1.9.7)</span><br>
+Настройки -&gt; Встроенные объекты<br>
+«Не показывать заполнитель вместо объектов с сайтов, отмеченных как недоверенные»<br>
+(Options -&gt; Embeddings &quot;No placeholder for object ‹…› untrusted&quot;)
+</p>
+<p>
+<span class="bold">noscript.showVolatilePrivatePermissionsToggle (2.6.9.8rc3)</span><br>
+Настройки -&gt; Внешний вид «Пункты постоянных разрешений в приватном режиме»<br>
+(Options -&gt; Appearance &quot;Permanent &quot;Allow&quot; commands in private windows&quot;)<br>
+Показывать ли одноимённый пункт в меню разрешений приватного окна.<br>
+(см. noscript.volatilePrivatePermissions)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa3_26">https://noscript.net/faq#qa3_26</a>
+</p>
+<p>
+<span class="bold">noscript.siteInfoProvider (1.9.9.60, 2.0.6rc1)</span><br>
+Информация о сайте, при нажатии СКМ или Shift+ЛКМ на пункте меню разрешений или на пункте в<br>
+Настройки -&gt; Белый список (Options -&gt; Whitelist). Дефолтный адрес можно менять, например:<br>
+http://www.urlvoid.com/scan/%utf8%<br>
+https://www.dshield.org/ipinfo.html?ip=%utf8%<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#siteinfo">https://noscript.net/features#siteinfo</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2013/04/06/noscripts-security-and-privacy-info-feature/">https://hackademix.net/2013/04/06/noscripts-security-and-privacy-info-feature/</a>
+</p>
+<p>
+<span class="bold">noscript.smartClickToPlay (2.3.8rc1)</span><br>
+Интеграция с click to play.<br>
+true — при подтверждении NoScript’овского разрешения включения плагина, он включается сразу.<br>
+false — дополнительно требуется нажать на «Включить Adobe Flash».
+</p>
+<p>
+<span class="bold">noscript.sound</span><br>
+Настройки -&gt; Уведомления «Звуковое оповещение при блокировке скриптов»<br>
+(Options -&gt; Notifications &quot;Auto feedback when scripts are blocked&quot;)
+</p>
+<p>
+<span class="bold">noscript.sound.oncePerSite</span><br>
+Не повторять «Звуковое оповещение при блокировке скриптов» при повторном переходе на вкладку,<br>
+открытии недавно закрытой вкладки.
+</p>
+<p>
+<span class="bold">noscript.statusIcon</span><br>
+Настройки -&gt; Внешний вид «Значок в строке состояния»<br>
+(Options -&gt; Appearance &quot;Status bar icon&quot;)<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa2_7">https://noscript.net/faq#qa2_7a</a>
+</p>
+<p>
+<span class="bold">noscript.statusLabel</span><br>
+Настройки -&gt; Внешний вид «Сообщения в строке состояния»<br>
+(Options -&gt; Appearance &quot;Status bar label&quot;)
+</p>
+<p>
+<span class="bold">noscript.stickyUI (1.8.4)</span><br>
+Не относится к меню, вызываемому с клавиатуры (Ctrl + Shift + S).<br>
+true — меню разрешений не пропадает без клика в другом месте<br>
+(если меню разрешений открыто нажатием ЛКМ, а не наведением курсора).<br>
+false — будет пропадать после любого действия.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa5_5">https://noscript.net/faq#qa5_5</a>
+</p>
+<p>
+<span class="bold">noscript.stickyUI.liveReload (1.8.4)</span><br>
+true — перезагрузка страницы после разрешения/запрещения первого же скрипта,<br>
+без закрытия меню разрешений.<br>
+false — перезагрузка страницы после клика в другом месте.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa5_5">https://noscript.net/faq#qa5_5</a>
+</p>
+<p>
+<span class="bold">noscript.stickyUI.onKeyboard</span><br>
+Для меню, вызываемого с клавиатуры (Ctrl + Shift + S).<br>
+true — перезагрузка страницы после разрешения/запрещения первого же скрипта.<br>
+false — перезагрузка страницы после клика в другом месте или нажатия Esc.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/faq#qa5_5">https://noscript.net/faq#qa5_5</a>
+</p>
+<p>
+<span class="bold">noscript.subscription.*URL (1.9.9.53)</span><br>
+«Туда просто нужно вбить урлы на файлы подписок и радоваться&hellip;»<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forum.mozilla-russia.org/viewtopic.php?pid=414014#p414014">https://forum.mozilla-russia.org/viewtopic&hellip;#p414014</a>&nbsp;iDev.Pi
+</p>
+<p>
+<span class="bold">noscript.surrogates.debug (1.9.9.98rc4)</span><br>
+Отображение в консоли ошибок, вызванных срабатыванием суррогатов.<br>
+(только ошибок, а не всех срабатываний).
+</p>
+<p>
+<span class="bold">noscript.surrogate.matchPrivileged (5.1.6.4rc1)</span><br>
+Если значение "true", то суррогаты срабатывают и на привилегированных<br>
+страницах (moz-extension:).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=95466#p95466">https://forums.informaction.com/viewtopic.php?p=95466#p95466</a>
+</p>
+<p>
+<span class="bold">noscript.surrogate.surrogate_name.exceptions (1.8.9.3)</span><br>
+Страницы, где не надо применять surrogates.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2009/01/page/2/">https://hackademix.net/2009/01/page/2/</a>
+</p>
+<p>
+<span class="bold">noscript.surrogate.surrogate_name.replacement (1.8.9.3)</span><br>
+Код JavaScript, который будет выполнен.<br>
+Обновляемый список встроенных — <a href="https://forums.informaction.com/viewtopic.php?f=26&t=19930">List of sites for which NoScript provides surrogates</a>.<br>
+Можно создавать свои правила — <a href="https://hackademix.net/2011/09/29/script-surrogates-quick-reference/">script-surrogates-quick-reference</a>.<br>
+Примеры:<br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes#Attribute_list">autofocus</a> <a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=4301">https://forums.informaction.com/viewtopic&hellip;4301</a>&nbsp;Giorgio&nbsp;Maone<br>
+document.write (infinite loading)<br>
+<a href="https://forum.mozilla-russia.org/viewtopic.php?pid=613017#p613017">https://forum.mozilla-russia.org/viewtopic.php?pid=613017#p613017</a>&nbsp;Lex1<br>
+<a href="https://forum.mozilla-russia.org/viewtopic.php?pid=589802#p589802">https://forum.mozilla-russia.org/viewtopic.php?pid=589802#p589802</a>&nbsp;Lex1<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=22473">https://forums.informaction.com/viewtopic.php?p=22473</a><br>
+dom.event.contextmenu.enabled<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=98024#p98024">https://forums.informaction.com/viewtopic.php?p=98024#p98024</a>&nbsp;barbaz<br>
+id (zap (грохнуть ненужный элемент))<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=60377#p60377">https://forums.informaction.com/viewtopic.php?p=60377#p60377</a>&nbsp;Thrawn<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=79047#p79047">https://forums.informaction.com/viewtopic.php?p=79047#p79047</a>&nbsp;Thrawn<br>
+inline (I)FRAMES (zap) <a href="https://forums.informaction.com/viewtopic.php?p=73087&amp;#p73087">https://forums.informaction.com/viewtopic.php?p=73087&amp;#p73087</a>&nbsp;barbaz<br>
+inline scripts (блокировка inline-скриптов, при работающих внешних скриптах)<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=23&amp;t=19937">https://forums.informaction.com/viewtopic.php?f=23&amp;t=19937</a><br>
+<a href="https://forum.mozilla-russia.org/viewtopic.php?pid=700318#p700318">https://forum.mozilla-russia.org/viewtopic.php?pid=700318#p700318</a>&nbsp;jars<br>
+inline SVG (zap) <a href="https://forums.informaction.com/viewtopic.php?p=73003#p73003">https://forums.informaction.com/viewtopic.php?p=73003#p73003</a>&nbsp;barbaz<br>
+jQuery (замена ajax.googleapis.com, yastatic.net, code.jquery.com и т.п.)<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=26&amp;t=20473">https://forums.informaction.com/viewtopic.php?f=26&amp;t=20473</a><br>
+<a href="https://forums.informaction.com/viewtopic.php?p=69882#p69882">https://forums.informaction.com/viewtopic.php?p=69882#p69882</a><br>
+Lazy load images (увидеть изображения, предназначенные для отложенной загрузки)<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=26&amp;t=19929">https://forums.informaction.com/viewtopic.php?f=26&amp;t=19929</a>&nbsp;barbaz<br>
+keydown, keypress, keyup<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=80666#p80666">https://forums.informaction.com/viewtopic.php?p=80666#p80666</a>&nbsp;barbaz<br>
+mousedown, mouseover, click, focus<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=84050#p84050">https://forums.informaction.com/viewtopic.php?p=84050#p84050</a>&nbsp;barbaz<br>
+mouseleave, mouseout <a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=21076">https://forums.informaction.com/viewtopic.php?f=7&amp;t=21076</a><br>
+navigator.app* + navigator.platform<br>
+<a href="https://www.wilderssecurity.com/threads/firefox-lockdown.368003/page-7#post-2532584">https://www.wilderssecurity.com/threads/&hellip;25325842</a>&nbsp;Techwiz<br>
+navigator.cookieEnabled<br>
+&nbsp;(return true) <a href="https://forums.informaction.com/viewtopic.php?p=16102#p16102">https://forums.informaction.com&hellip;#p16102</a>&nbsp;Giorgio&nbsp;Maone<br>
+<a href="http://forums.mozillazine.org/viewtopic.php?p=5786235#p5786235">http://forums.mozillazine.org/viewtopic&hellip;#p5786235</a>&nbsp;Giorgio&nbsp;Maone<br>
+&nbsp;(запретить проверку разрешения) <a href="https://forums.informaction.com/viewtopic.php?p=16142#p16142">https://forums.informaction.com&hellip;#p16142</a>&nbsp;Giorgio&nbsp;Maone<br>
+navigator.mimeTypes + navigator.plugins<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=80915#p80915">https://forums.informaction.com/viewtopic&hellip;#p80915</a>&nbsp;barbaz<br>
+<a href="https://www.wilderssecurity.com/threads/firefox-lockdown.368003/page-7#post-2532142">https://www.wilderssecurity.com/threads/&hellip;2532142</a>&nbsp;TheWindBringeth<br>
+navigator.mozGetUserMedia (media.navigator.enabled)<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=18&amp;t=18818">https://forums.informaction.com/viewtopic.php?f=18&amp;t=18818</a>&nbsp;barbaz<br>
+navigator.plugins <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=757726#c151">https://bugzilla.mozilla.org/&hellip;757726</a>&nbsp;Garrett&nbsp;Smith<br>
+<a href="https://wiki.kairaven.de/open/app/firefox#plugin-fingerprinting">https://wiki.kairaven.de/open/app/firefox#plugin-fingerprinting</a>&nbsp;Kai&nbsp;Raven<br>
+navigator.sendBeacon (beacon.enabled)<a href="https://forums.informaction.com/viewtopic.php?p=75258#p75258">https://forums.informaction.com/viewtopic&hellip;75258</a>&nbsp;barbaz<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=19912&amp;p=70886#p70886">https://forums.informaction.com/viewtopic.php?f=7&amp;t=19912&amp;p=70886#p70886</a>&nbsp;barbaz<br>
+<a href="https://openuserjs.org/scripts/tntc4/navigator.sendBeacon_Remover/source">https://openuserjs.org/scripts/tntc4/navigator.sendBeacon_Remover/source</a>&nbsp;tntc4<br>
+navigator.userAgent (general.useragent.override.example.tld)<br>
+<a href="https://javascript.ru/forum/misc/37856-perezapis-standartnykh-obektov.html#post249852">https://javascript.ru/&hellip;perezapis-standartnykh-obektov.html#post249852</a>&nbsp;danik.js<br>
+<a href="https://superuser.com/questions/445869/can-i-switch-the-user-agent-header-for-only-a-single-web-site/695049#695049">https://superuser.com/questions/445869/user-agent-header-for-a-single-site&hellip;695049</a><br>
+Pastejacking (dom.allow_cut_copy) <a href="https://github.com/The-OP/Fox/issues/57#issuecomment-224301010">https://github.com/The-OP/Fox/&hellip;comment-224301010</a>&nbsp;The-OP<br>
+Rightclick <a href="https://forums.informaction.com/viewtopic.php?p=85909#p85909">https://forums.informaction.com/viewtopic.php?p=85909#p85909</a>&nbsp;lexi<br>
+UTC <a href="https://gist.github.com/huafu/9867833#file-force-utc-date-js">https://gist.github.com/huafu/9867833#file-force-utc-date-js</a>&nbsp;huafu<br>
+window.close (popups) <a href="https://forums.informaction.com/viewtopic.php?p=21804#p21804">https://forums.informaction.com/viewtopic.php?p=21804#p21804</a>&nbsp;Giorgio&nbsp;Maone<br>
+window.confirm <a href="https://forums.informaction.com/viewtopic.php?p=83955#p83955">https://forums.informaction.com/viewtopic.php?p=83955#p83955</a>&nbsp;barbaz<br>
+window.eval <a href="https://www.dslreports.com/forum/r26131393-NoScript-Trick-Kills-Obfuscated-Javascript-Exploits-Dead">https://www.dslreports.com/forum/&hellip;</a>&nbsp;Improfane<br>
+window.getSelection (<span class="prim">добавить Object.defineProperty(document, "getSelection", {value:function(){return {};}});</span>)<br>
+<a href="https://github.com/The-OP/Fox/blob/master/userjs/disable-getselection.user.js">https://github.com/&hellip;/disable-getselection.user.js</a>&nbsp;The-OP<br>
+window.indexedDB (dom.indexedDB.enabled) <a href="http://forum.ru-board.com/topic.cgi?forum=5&amp;topic=47889&amp;start=3760#12">http://forum.ru-board.com/topic&hellip;3760#12</a>&nbsp;file heka<br>
+window.localStorage + window.sessionStorage (dom.storage.enabled)<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=18968#p18968">https://forums.informaction.com/&hellip;#p18968</a>&nbsp;al_9x<br>
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=527970#c6">https://bugzilla.mozilla.org/show_bug.cgi?id=527970#c6</a>&nbsp;al_9x<br>
+window.mozRTCPeerConnection (media.peerconnection.enabled)<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=75495#p75495">https://forums.informaction.com/viewtopic.php?p=75495#p75495</a>&nbsp;barbaz<br>
+window.navigator, window.screen <a href="https://forums.informaction.com/viewtopic.php?p=71552#p71552">https://forums.informaction.com/viewtopic&hellip;#p71552</a>&nbsp;barbaz<br>
+window.onbeforeunload (dom.disable_beforeunload)<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=12319#p12319">https://forums.informaction.com&hellip;p12319</a>&nbsp;Giorgio&nbsp;Maone<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=62624#p62624">https://forums.informaction.com/viewtopic&hellip;#p62624</a><br>
+window.open (disable_popups) <a href="https://forums.informaction.com/viewtopic.php?p=20777#p20777">https://forums.informaction.com/viewtopic.php?p=20777#p20777</a><br>
+window.opener (<a href="https://habrahabr.ru/post/282880/">close</a>/hijacks the original tab)<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=86339#p86339">https://forums.informaction.com/viewtopic.php?p=86339#p86339</a>&nbsp;barbaz<br>
+window.print <a href="https://forums.informaction.com/viewtopic.php?p=78100#p78100">https://forums.informaction.com/viewtopic&hellip;#p78100</a>&nbsp;barbaz<br>
+window.requestAnimationFrame (<span class="prim">добавить Object.defineProperty(window,&quot;mozRequestAnimationFrame&quot;,{set:function(){}});</span>)<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=70202#p70202">https://forums.informaction.com/viewtopic&hellip;#p70202</a>&nbsp;barbaz<br>
+window.screen.avail* <a href="https://superuser.com/questions/712461/how-to-customize-screen-resolution-reported-to-a-javascript-application-by-a-web">https://superuser.com/questions/&hellip;customize-screen-resolution</a><br>
+window.setInterval (notimers) <a href="https://forums.informaction.com/viewtopic.php?p=28260p28260">https://forums.informaction.com/viewtopic.php?p=28260p28260</a><br>
+window.setTimeout (antirefresh) <a href="https://forums.informaction.com/viewtopic.php?p=14800#p14800">https://forums.informaction.com/viewtopic&hellip;#p14800</a>&nbsp;Giorgio&nbsp;Maone<br>
+window.top (noframebreak, noframebusting)<br>
+<a href="http://forums.mozillazine.org/viewtopic.php?p=5689285#p5689285">http://forums.mozillazine.org/viewtopic.php?p=5689285#p5689285</a>&nbsp;Giorgio&nbsp;Maone<br>
+<a href="https://forums.informaction.com/viewtopic.php?p=27432#p27432">https://forums.informaction.com/viewtopic.php?p=27432#p27432</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://hackademix.net/2009/01/page/2/">https://hackademix.net/2009/01/page/2/</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://forum.mozilla-russia.org/viewtopic.php?pid=590478#p590478">https://forum.mozilla-russia.org/viewtopic&hellip;#p590478</a>&nbsp;Lain_13<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forum.mozilla-russia.org/viewtopic.php?pid=453021#p453021">https://forum.mozilla-russia.org/viewtopic&hellip;#p453021</a>&nbsp;Vladimir_S
+</p>
+<p>
+<span class="bold">noscript.surrogate.surrogate_name.sources (1.8.9.3)</span><br>
+URL заменяемого скрипта.<br>
+!@ <a href="https://noscript.net/changelog#1.9.9.95rc1">https://noscript.net/changelog#1.9.9.95rc1</a><br>
+no prefix, @, ! <a href="https://forums.informaction.com/viewtopic.php?p=18370#p18370">https://forums.informaction.com/viewtopic.php?p=18370#p18370</a><br>
+<a href="http://forums.mozillazine.org/viewtopic.php?p=5689285#p5689285">Notice that the &quot;@&quot; before URL&hellip;</a>&nbsp;Giorgio&nbsp;Maone<br>
+&lt;, &gt; <a href="https://noscript.net/changelog#2.1.3rc5">https://noscript.net/changelog#2.1.3rc5</a><br>
+Начиная с версии 2.6.8.15 можно указывать путь к локальному файлу — file:///D:/example.js
+</p>
+<p>
+<span class="bold">noscript.sync.enabled (2.1.0rc5)</span><br>
+Синхронизация настроек без задействования экспорта/импорта файла настроек.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forum.mozilla-russia.org/viewtopic.php?id=43364">https://forum.mozilla-russia.org/viewtopic.php?id=43364</a>&nbsp;Lain_13
+</p>
+<p>
+<span class="bold">noscript.temp</span><br>
+Cписок временно разрешённых сайтов.
+</p>
+<p>
+<span class="bold">noscript.tempGlobal (1.1.8.3)</span><br>
+true — при перезапуске браузера автоматически снимается галка<br>
+«Глобальное разрешение скриптов (опасно) (&quot;Allow Scripts Globally (dangerous)&quot;).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=34908#p34908">https://forums.informaction.com/viewtopic&hellip;#p34908</a><br>
+&nbsp;&nbsp;&nbsp;maone.net/viewtopic.php?p=7538#p7538
+</p>
+<p>
+<span class="bold">noscript.toStaticHTML (1.9.9.98rc2)</span><br>
+Суррогат, основанный на window.toStaticHTML (<a href="https://blogs.msdn.microsoft.com/ie/2008/07/02/ie8-security-part-v-comprehensive-protection/">Safer Mashups: HTML Sanitization</a> — из строки, <br>
+переданной этой функции, удаляются любые конструкции потенциально исполняемых скриптов).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=10&amp;t=5920">https://forums.informaction.com/viewtopic.php?f=10&amp;t=5920</a>&nbsp;al_9x<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=19516#p19516">https://forums.informaction.com/viewtopic.php?p=19516#p19516</a>
+</p>
+<p>
+<span class="bold">noscript.toggle.temp (1.1.4.6.070317)</span><br>
+По нажатию CTRL + SHIFT + \<br>
+true — временно запретить/разрешить документ верхнего уровня.<br>
+false — постоянно запретить/разрешить документ верхнего уровня.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#kbshort">https://noscript.net/features#kbshort</a>
+</p>
+<p>
+<span class="bold">noscript.toolbarToggle (1.1.4.1)</span><br>
+(отключается с помощью noscript.hoverUI.excludeToggling)<br>
+Настройки -&gt; Основные -&gt; «Нажатием на значок переключать разрешение<br>
+документа верхнего уровня активной вкладки»<br>
+1 — «Полные адреса (http://www.noscript.net)»<br>
+2 — «Полные домены (www.noscript.net)»<br>
+3 — «Базовые домены 2-го уровня (noscript.net)»<br>
+(Options -&gt; General -&gt; &quot;Left clicking on NoScript toolbar button ‹…› site&quot;)<br>
+1 — &quot;Full Addresses (http://www.noscript.net)&quot;<br>
+2 — &quot;Full Domains (www.noscript.net)&quot;<br>
+3 — &quot;Base 2nd level Domains (noscript.net)&quot;
+</p>
+<p>
+<span class="bold">noscript.truncateTitle (1.1.3.5)</span><br>
+Сокращение длинных имён, в т.ч. при сохранении вкладок.<br>
+Защита от ошибки 319004 (DOS атаки), в т.ч. на whitelisted сайтах.<br>
+С v 2.0.9.8 также сокращение URL placeholder’ов подсказок в строке запроса<br>
+для удобства читаемости.<br>
+
+</p>
+<p>
+<span class="bold">noscript.truncateTitleLen</span><br>
+Количество символов noscript.truncateTitle.
+</p>
+<p>
+<span class="bold">noscript.untrusted</span><br>
+Недоверенные сайты. Не разрешаются, даже если используются режимы «Временно разрешать<br>
+документы верхнего уровня по умолчанию» или «Глобальное разрешение скриптов».<br>
+Экспортируются в тот же файл, что и белый список. Редактировать можно в этом файле,<br>
+в about:config, в меню разрешений.<br>
+<a href="https://forums.informaction.com/viewtopic.php?f=10&amp;t=7687">SOME SITES YOU MIGHT NOT WANT TO ALLOW</a>&nbsp;Tom&nbsp;T.<br>
+<a href="https://noscript.net/faq#qa3_10">https://noscript.net/faq#qa3_10</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#blacklist">https://noscript.net/features#blacklist</a>
+</p>
+<p>
+<span class="bold">noscript.untrustedGranularity (1.7.5.3)</span><br>
+Определяет, как удаление (вручную) домена из blacklist и внесение во whitelist<br>
+влияет на статус потомков:<br>
+0 — не вносить потомков в blacklist.<br>
+1 — держать потомков в blacklist при временном разрешении.<br>
+2 — держать потомков в blacklist при постоянном разрешении.<br>
+3 — всегда держать потомков в blacklist.<br>
+4 — удалять потомков из blacklist при разрешении недоверенного домена.<br>
+Белый список подчиняется этой настройке.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://www.dslreports.com/forum/r20719965-Extension-Noscript-v175-Dev-Build-Available">https://www.dslreports.com/forum/&hellip;v175-Dev-Build-Available</a>&nbsp;Grail&nbsp;Knight
+</p>
+<p>
+<span class="bold">noscript.urivalid.protocolname (1.1.6.12)</span><br>
+URI-валидитор для защиты от URI-based эксплойтов.<br>
+Можно создавать строковые параметры по образцу noscript.urivalid.aim<br>
+или пробовать добавлять протоколы в noscript.fixURI.exclude.<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=3375377#p3375377">http://forums.mozillazine.org/viewtopic&hellip;#p3375377</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.utf7filter (1.1.6.05)</span><br>
+Защита от <a href="http://blog.kotowicz.net/2010/10/xss-hackme-challenge-solution-part-2.html">UTF-7 XSS</a> атак.
+</p>
+<p>
+<span class="bold">noscript.volatilePrivatePermissions (2.6.9.7)</span><br>
+Меню разрешений в приватном режиме -&gt;<br>
+«Пункты постоянных разрешений в приватном режиме»<br>
+(&quot;Permanent &quot;Allow&quot; commands in private windows&quot;)<br>
+false — показываются постоянные и временные разрешения.<br>
+true — показываются только временные разрешения.<br>
+Временные разрешения не сохраняются на диск.<br>
+(см. noscript.showVolatilePrivatePermissionsToggle).
+</p>
+<p>
+<span class="bold">noscript.webext.enabled (5.0.3rc3)</span><br>
+Контроль запуска встроенного WebExtension.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://developer.mozilla.org/ru/docs/Archive/Add-ons/Embedded_WebExtensions">https://developer.mozilla.org/ru/docs/Archive/Add-ons/Embedded_WebExtensions</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/changelog#5.0rc1">https://noscript.net/changelog#5.0rc1</a>
+</p>
+<p>
+<span class="bold">noscript.whitelistRegExp (1.1.8)</span><br>
+Для обхода ограничения на использование в белом списке подстановочных знаков только в субдомене.<br>
+(<a href="https://noscript.net/features#sitematching">https://noscript.net/features#sitematching</a>).<br>
+Использовать только в исключительных случаях.<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=3312305#p3312305">http://forums.mozillazine.org/viewtopic&hellip;#p3312305</a><br>
+^https?://[^/]+\.edu/<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums-test.mozillazine.org/viewtopic.php?p=3208645#p3208645">http://forums-test.mozillazine.org/viewtopic&hellip;#p3208645</a>&nbsp;Giorgio&nbsp;Maone<br>
+.*\.(?:edu|gov)<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums.mozillazine.org/viewtopic.php?p=5576055#p5576055">http://forums.mozillazine.org/viewtopic&hellip;#p5576055</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.xss.checkInclusions (2.1.8rc2)</span><br>
+Защита от атаки Cross Site Scripting Inclusion (XSSI).<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?f=7&amp;t=7490">https://forums.informaction.com/viewtopic.php?f=7&amp;t=7490</a>
+</p>
+<p>
+<span class="bold">noscript.xss.notify.subframes (1.1.4.8rc1)</span><br>
+Предупреждения об XSS в субфреймах.
+</p>
+<p>
+<span class="bold">noscript.xss.trustData</span><br>
+true — anti-XSS фильтр должен быть обойден для javascript: и data: URL.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://forums.informaction.com/viewtopic.php?p=79577#p79577">https://forums.informaction.com/viewtopic.php?p=79577#p79577</a>
+</p>
+<p>
+<span class="bold">noscript.xss.trustExternal (1.1.4.8.070509)</span><br>
+true — anti-XSS фильтр должен быть обойден для URL-адресов, открываемых из внешних приложений,<br>
+таких как почтовые клиенты.<br>
+&nbsp;&nbsp;&nbsp;<a href="http://forums-test.mozillazine.org/viewtopic.php?p=3331959#p3331959">http://forums-test.mozillazine.org/viewtopic&hellip;p3331959</a>&nbsp;Giorgio&nbsp;Maone
+</p>
+<p>
+<span class="bold">noscript.xss.trustReloads (1.1.4.8.070425)</span><br>
+false — проверять на XSS при автоперезагрузке страниц, вносимых в белый список.
+</p>
+<p>
+<span class="bold">noscript.xss.trustTemp (1.1.4.8.070509)</span><br>
+false — «Временно разрешённые» сайты рассматриваются как недоверенные, с точки зрения<br>
+защиты от XSS, даже если запросы от этих сайтов не содержат <a href="https://noscript.net/features#injections">HTML или JS инъекции</a>.<br>
+true — обход anti-XSS для временно разрешённых.<br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#xss">https://noscript.net/features#xss</a><br>
+&nbsp;&nbsp;&nbsp;<a href="https://noscript.net/features#xssopts">https://noscript.net/features#xssopts</a>
+</p>
+<!--/noindex-->
+  </div>
+</div>
+
+      <div class="footerbg">
+
+Хотелось бы выразить благодарность:<br>
+<span class="bold"><a style="text-decoration:none" href="https://forum.mozilla-russia.org/profile.php?id=48107">iDev.Pi</a></span> и <span class="bold"><a style="text-decoration:none" href="https://forum.mozilla-russia.org/profile.php?id=9723">Lain_13</a></span> — за помощь с ABE;<br>
+<span class="bold"><a style="text-decoration:none" href="https://forum.mozilla-russia.org/profile.php?id=45414">okkamas_knife</a></span>, <span class="bold"><a style="text-decoration:none" href="https://forum.mozilla-russia.org/profile.php?id=62696">turbot</a></span>, 
+<span class="bold"><a style="text-decoration:none" href="https://forum.mozilla-russia.org/profile.php?id=114222">yup</a></span>, 
+<span class="bold"><a style="text-decoration:none" href="https://forum.mozilla-russia.org/profile.php?id=71856">Dumby</a></span>
+ — за скрипты и кнопки CB;<br>
+<span class="bold"><a style="text-decoration:none" href="https://forum.mozilla-russia.org/profile.php?id=48303">bunda1</a></span> — 
+за <a href="https://forum.mozilla-russia.org/viewtopic.php?pid=694811#p694811">кнопку</a> CB, сделанную специально для NoScript;<br>
+<span class="bold"><a style="text-decoration:none" href="https://forums.informaction.com/memberlist.php?mode=viewprofile&amp;u=181509">barbaz</a></span>,
+<span class="bold"><a style="text-decoration:none" href="https://forum.mozilla-russia.org/profile.php?id=17449">Infocatcher</a></span>
+ — за разъяснение смысла сложных для понимания вещей.<br>
+
+<div style="display:inline-block" id="fdleft">
+updated:&nbsp;2020.01.28
+</div>
+<div style="display:inline-block" id="fdright">
+<a href="https://github.com/chico-gordo/chico-gordo.github.io/blob/master/LICENSE.md"><img
+src=
+"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAAXCAYAAAC/F5msAAAIjElEQVRYhd2YaVRURxqGv3tv7w2IbEKahgbBhU1QXJBNaVREBRRBhDjaCCirCswkKqKMIgjiElSMEbcwShiNjoiCtInxZByjxuXEZNSJieOIsrdGe2I0+s4PQo+NDUHnRw5zz3nP6a6q+31VT1e9VV0kFosusAzzrK+LYZifGaLnRPScZZkXIqHghUgkAMuy4PG45xzHtvF4zDUiKieiTCKKJCIL6nxEIn7rqhXx+LS+tE8qa3EMbGWWEAr5cHayhXL8CMTPm4KVOSrs3P4Oao4Uo6QoDdEzgzDcazCEQv6Lfv2kz4yNJE9YlnnK5/P3EZElSSTiCwWrF0CrUfc57duVAz6fh5KiNNy4th8JqmkYF+gFO/kASMRCGBlJYGpqjIGOMt07P7SeRGzMBLgMVeBQVT7c3ZyeCQT8r4nPZz9MiJ/24rce1JtIOd4bIpEAByvX4PbNg4iNmQArq/5Q2FsjaPwIhEwcjbCpfpgREQhlkDe8PAdB9pYlHBQ2eDt2Ei6f3w17e1twHPeCiGhFYIDXj90lu33zIMpKs5GeEokZEYHIXa7CscNFaLxzVNemsiIP69YmY+P6DGwoTkdhfjLycudjZY4Ke8tz8NfTZSjMT8aG4nRsXJ+BooIUFKxegML8ZFTt/yOuXNijl7Ph+8MoWL0AJUVp2Lg+A4X5yTj72fZX+jZfNRWuLg6QiIVQ2FtjengAMlJnIjtzNtbkJaKsNAt/2rcSZaXZKC5IQe5yFRalRWFOXAjGjnEDwzAgIjAMByKiOFuZ1b8NQdi1YynMzEzg7GSL3OUq7ClfjvSUSDg7y8GyDI4cLIBWo8aX58oRGOAFIoLC3hpvx05CTHQwBg+yg7+vB25dr0JG6kwQEUxMpFizKhGL0qMxedIYiEVCEBGiI4N0cFvv16CsNBss29HR5KQI3Lh2wCCIuNkTce/2EZSVZiN7yWzMilLC18cddvIB4PE4EBGICGZmJhjm4YSpoWOxMDEcsbOCITUygYVcCYblgYhoDMeyzx+11eslqazIAxHB32+Y3q+v1ajR3ngCPqNdcbq+VFe2emUCiAixMRP02kZHBkGrUeN0fSmICHJbK736y+d3w9XFAUSEiDB/vTpTU2MQET7/dJvB2doJ4nF7Pbr2X6tR41FbPW5dr0LLvRo8aqvHjWsHsGVTJmS2MtjYecBp5DLYDp0LhuWDiMiSiHD9q/26AK33a2AnHwAiMjgltRo1kuaH4R/fVOq+FxemGgRx4exOaDVqfPH5DoMgtBo1Pjn53i9TlMGlL3bpym2szUFE+PJceY8g2hqPw0Ehg0gkhrmFBRQODvD0dMe4cT4YOdILNjY2EIulMLeU4S0HPwwavQoeyg/gofwAchcV2F9AEMexP9ZWl+gSfFyVDyLCkMH23RpVw/eH8bi9vkcQX1+p0H3uCYRWo8bgQXYgImx7L+u1QWg1ahz6KB8WAxzhGrgZQ3wL4TxqBRyHZ8Fp5DK4+JfoBt5Vctd4sJygA4SRkehmWWm2LkFhfjKICFNDx/bawbuCaG88gfBpfr0GoQzyBhHhD1lxbwRCq1HDz88bdm7x3Q7akOxcE8Bywg4QEomwbtk7v9MFXJAQDiJC/Lwprw1CLBJCbmsFExMphg5R9BrErCgliAiLM6LfGMSV87vRr78F3MZt6T0It6T/gpBKxJeKC1N1AXOWzgURYcpk/RnxQ+tJnfE8bKlDc8Mx3fLoBBE5PRDNDcfw3Y0qBPh79hpEyMTRICJs3Zz5xiC0GjWSEiMhcw7tNQh794VgORE6j9ntByvX6ILt3rkMRAQ3V0e9JBf/thMB/p4QCHi6rbDlXk23HvHycvs1EB7uA0FEOFW3+X8Ccf+ff4GZuQWGjF3bOxAeKWA5MYiIJESk59ZfXdoHjmPBMAwun9/9SgeiI4NARMhZOrdbj+iqnkB8+/ePIBDw4O42UM+AuwPReaYwBEKrUWPLpkxYy4f3CoRiWBo4XgcIV4YhtDUe1ws2d85kEJHBRHPiQkBEyMudrytbt7bDYGOig18bRGL8NBARXp6V3YF43F6P6eEBPYIoKkiDxQBneCh39AJEug5EmLmp8ZOuwW5dr8JARxmICFmLY/CguRZajRoPW+oQEeb/CohOXwkN8TEI4sTR9SAi2MosodWo0dxwDGdObcX08AAIhXy9bbMzj1QiAhHhzKmteNhSh7vfHUbFnlxEzRjfLYgTR9fDtL9Vj1vmy3LwXASOJwER0ZIRw50NHrGb/nUUMdHBEAr5kEpEGOk9FEZGEpiZmWBBQjiuXtwLrUaN3OUqSMQdR2WWZRAY4AVNU61erNAQH91xVyDggWEYOChsEBMdjDOntr6Se1PJIl37rkqMn2YQxLXLH8LMzALOo1b02iwdvZZ0gGBZ2jI7esLPhkB06kFzLc5+th01R4px9eJePGyp06tvvV+D9sYTeNxejwfNtWi6W/1KjOaGY3jQXIvH7fXQNNXqTLY7tTUe15uFLfdq0HjnqC5PVxBNd6vh4KiAwj3ptc4Rjl6ZHSCkIuEnL5teX9LL/zWUQT6wkI2CR9Cv+0Knhvqug5UitAOEWCy6U/7+u7/5oN5EqQtnYEZEIO58ewi/z5oDNzcXGBn3g0zhDdmgWZC7qGDnlgSFRwocPBdB7qKCzGkqbB3HwNxSBksrK0wIHguGYZ4Rj8e1SySipyYm0id9TRKJ8CnHcSgpStMtx6a71fi4Kh9ZS+KgmheBqJkhCA0dB6XSF/HzIlBUkII/H1iNqxf3oq5mA9xcB/4kFApriYhciSiiD2ubSMRr5XHcc3s765/8/TyfquZ23FmWv/8uaqtLUFmRh+LCVGSkRSEs1Pepu5uD1sS4y53l/8nDEFEAESUR0RqWZSvEYtE5sVh4j2GYZ3w+76FUKvxGIBBUE9EmMnCL/R9zEPGbHLQu2AAAAABJRU5ErkJggg==" alt="Image of GFDL"></a>
+
+</div>
+
+      </div>
+
+</body>
+</html>
